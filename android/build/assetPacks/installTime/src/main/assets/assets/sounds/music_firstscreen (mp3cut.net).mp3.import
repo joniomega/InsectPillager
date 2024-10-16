@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music_firstscreen (mp3cut.net).mp3-901196736d48c0af3b8720f6620120cf.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music_firstscreen (mp3cut.net).mp3"
+dest_files=[ "res://.import/music_firstscreen (mp3cut.net).mp3-901196736d48c0af3b8720f6620120cf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

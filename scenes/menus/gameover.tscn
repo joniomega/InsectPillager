@@ -1,0 +1,182 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/menus/gameover.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/button1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/essence.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/shell_icon.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/icon_ad.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/icon_home.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+outline_size = 2
+outline_color = Color( 0, 0, 0, 0.529412 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 51
+outline_size = 3
+outline_color = Color( 0.0313726, 0.0196078, 0.0196078, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 0.815686, 1, 0.792157, 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 0.741176, 1, 0.682353, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 30, 14 )
+
+[node name="gameover" type="Node2D"]
+pause_mode = 2
+scale = Vector2( 0.5, 0.4 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -489.0
+margin_top = -320.0
+margin_right = 490.0
+margin_bottom = 259.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 0.631373 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -2.0
+margin_top = -22.0
+margin_right = 38.0
+margin_bottom = 18.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="scoretitle2" type="Label" parent="Control"]
+margin_left = -28.0
+margin_top = -1.5
+margin_right = 31.0
+margin_bottom = 22.5
+custom_colors/font_color = Color( 0.721569, 0.721569, 0.721569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 4 )
+text = "shells:"
+align = 1
+
+[node name="shells" type="Label" parent="Control/scoretitle2"]
+margin_left = 9.0
+margin_top = 21.25
+margin_right = 49.0
+margin_bottom = 39.25
+custom_colors/font_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1000"
+align = 1
+
+[node name="ShellIcon" type="Sprite" parent="Control/scoretitle2"]
+modulate = Color( 1, 1, 1, 0.764706 )
+position = Vector2( -5, 11.25 )
+scale = Vector2( 0.625, 0.777344 )
+texture = ExtResource( 7 )
+
+[node name="title" type="Label" parent="Control"]
+margin_left = -67.0
+margin_top = -70.75
+margin_right = 68.0
+margin_bottom = -34.75
+custom_colors/font_color = Color( 0.490196, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "GAMEOVER"
+
+[node name="scoretitle" type="Label" parent="Control"]
+margin_left = -20.0
+margin_top = -35.0
+margin_right = 29.0
+margin_bottom = -11.0
+custom_colors/font_color = Color( 0.721569, 0.721569, 0.721569, 1 )
+custom_colors/font_color_shadow = Color( 0.521569, 0.521569, 0.521569, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 4 )
+text = "score:"
+
+[node name="score" type="Label" parent="Control/scoretitle"]
+margin_left = 1.0
+margin_top = 20.25
+margin_right = 41.0
+margin_bottom = 38.25
+custom_colors/font_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1000"
+align = 1
+
+[node name="Essence" type="Sprite" parent="Control/scoretitle"]
+modulate = Color( 1, 1, 1, 0.764706 )
+position = Vector2( -9, 11.25 )
+scale = Vector2( 0.8, 0.875 )
+texture = ExtResource( 6 )
+
+[node name="revive" type="Button" parent="."]
+margin_left = -70.0
+margin_top = 48.0
+margin_right = 163.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.6, 0.759999 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.909804, 0.909804, 0.909804, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "REVIVE"
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="exit" type="Button" parent="."]
+margin_left = -70.0
+margin_top = 100.5
+margin_right = 163.0
+margin_bottom = 163.5
+rect_scale = Vector2( 0.6, 0.759999 )
+custom_colors/font_color = Color( 0.682353, 0.682353, 0.682353, 1 )
+custom_colors/font_color_hover = Color( 0.909804, 0.909804, 0.909804, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "E X I T"
+icon = ExtResource( 9 )
+align = 0
+expand_icon = true
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+bus = "Effects"
+
+[connection signal="pressed" from="revive" to="." method="_on_revive_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

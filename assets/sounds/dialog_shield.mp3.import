@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dialog_shield.mp3-48f7ad4d977c54d20321097caf9f03bb.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/dialog_shield.mp3"
+dest_files=[ "res://.import/dialog_shield.mp3-48f7ad4d977c54d20321097caf9f03bb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

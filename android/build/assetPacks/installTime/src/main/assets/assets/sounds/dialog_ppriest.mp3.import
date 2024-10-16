@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dialog_ppriest.mp3-c26473b1fd795e694c754c64bf1070d3.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/dialog_ppriest.mp3"
+dest_files=[ "res://.import/dialog_ppriest.mp3-c26473b1fd795e694c754c64bf1070d3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

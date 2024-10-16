@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bell-cave-28868.mp3-db377f5594864d35df9cb5c90fe16147.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/bell-cave-28868.mp3"
+dest_files=[ "res://.import/bell-cave-28868.mp3-db377f5594864d35df9cb5c90fe16147.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

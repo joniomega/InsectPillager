@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/effect_sacralpad-109922 (1).mp3-14eafb1990023190ae6437df0ed10a61.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/effect_sacralpad-109922 (1).mp3"
+dest_files=[ "res://.import/effect_sacralpad-109922 (1).mp3-14eafb1990023190ae6437df0ed10a61.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

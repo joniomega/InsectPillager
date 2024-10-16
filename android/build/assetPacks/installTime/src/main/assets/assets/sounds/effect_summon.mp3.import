@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/effect_summon.mp3-a9f121993bad4eaad3be922e9664eda0.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/effect_summon.mp3"
+dest_files=[ "res://.import/effect_summon.mp3-a9f121993bad4eaad3be922e9664eda0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

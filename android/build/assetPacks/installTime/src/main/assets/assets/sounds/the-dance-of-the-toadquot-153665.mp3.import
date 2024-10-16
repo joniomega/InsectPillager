@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the-dance-of-the-toadquot-153665.mp3-76922efe1bc5c1f78b313a2b3f170c9a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/the-dance-of-the-toadquot-153665.mp3"
+dest_files=[ "res://.import/the-dance-of-the-toadquot-153665.mp3-76922efe1bc5c1f78b313a2b3f170c9a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
