@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/border2.png" type="Texture" id=2]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -67,12 +69,65 @@ animations = [ {
 margin_right = 40.0
 margin_bottom = 40.0
 
+[node name="Border2" type="Sprite" parent="CanvasLayer/back"]
+position = Vector2( 511.5, 245 )
+scale = Vector2( 18.1667, 6.43333 )
+texture = ExtResource( 2 )
+
 [node name="object" type="Control" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="icon" type="AnimatedSprite" parent="CanvasLayer/object"]
-position = Vector2( 368, 232 )
-scale = Vector2( 7.75, 8 )
+position = Vector2( 378, 239 )
+scale = Vector2( 5, 5 )
 frames = SubResource( 7 )
 animation = "magnetcollar"
+
+[node name="Shadow" type="Sprite" parent="CanvasLayer/object/icon"]
+show_behind_parent = true
+position = Vector2( -0.400002, -1.4 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="Shadow2" type="Sprite" parent="CanvasLayer/object"]
+position = Vector2( 611, 231.375 )
+scale = Vector2( 8.375, 5.89844 )
+texture = ExtResource( 3 )
+
+[node name="title" type="Label" parent="CanvasLayer/object"]
+margin_left = 559.0
+margin_top = 184.0
+margin_right = 671.0
+margin_bottom = 215.0
+text = "Collar of attaction"
+align = 1
+
+[node name="desc" type="Label" parent="CanvasLayer/object/title"]
+margin_left = -35.0
+margin_top = 24.0
+margin_right = 146.0
+margin_bottom = 71.0
+text = "This collar will attact 
+shells droped from enemies"
+align = 1
+
+[node name="buttons" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/buttons"]
+modulate = Color( 0.0941176, 1, 0, 1 )
+margin_left = 316.0
+margin_top = 315.0
+margin_right = 452.0
+margin_bottom = 361.0
+text = "TAKE"
+
+[node name="Button2" type="Button" parent="CanvasLayer/buttons"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 572.0
+margin_top = 313.0
+margin_right = 708.0
+margin_bottom = 361.0
+text = "RECYCLE"
