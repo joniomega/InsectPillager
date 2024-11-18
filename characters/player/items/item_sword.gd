@@ -37,8 +37,10 @@ func _on_Timer_timeout():
 # Método llamado cuando el área 2D de la derecha detecta una colisión
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.recibir_danio(sword_damage)
+		var damage = sword_damage + global.plussharpness
+		body.recibir_danio(damage)
 	for body in $Area2D.get_overlapping_bodies():
 			if body.is_in_group("enemy"):
-				body.recibir_danio(sword_damage)
+				var damage = sword_damage + global.plussharpness
+				body.recibir_danio(damage)
 	pass

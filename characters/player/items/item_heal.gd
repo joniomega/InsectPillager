@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var cura = 30
+var curaa = 30
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +19,7 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
-		body.curar_dano(cura)
+		body.curar_dano(curaa)
 		$potion.emitting = true
 		
 	pass # Replace with function body.

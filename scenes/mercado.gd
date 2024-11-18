@@ -1,6 +1,5 @@
 extends Node2D
 
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -22,9 +21,8 @@ func _ready():
 	else:
 		$currentcamera/ambience.stream_paused = false
 		pass
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if int(Dialogic.get_variable("ondialog")) == 1:
 		$currentcamera/ambience.stream_paused = true
@@ -33,11 +31,10 @@ func _process(delta):
 	pass
 
 
-#Una vez clicas el boton de la tienda de armaduras se abre el menu de las armaduras para poder comprarlas
 func _on_shopbutton_pressed():
 	buttonsound2.play()
 	Transition.change_scene("res://scenes/menus/CharacterCreator.tscn")
-	pass # Replace with function body.
+	pass
 
 func _on_enterdungeon_pressed():
 	buttonsound2.play()

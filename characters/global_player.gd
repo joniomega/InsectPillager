@@ -22,9 +22,15 @@ var sstate = 0
 var shells = 0
 var rank = 0
 
-# DURING EACH RUN
+# DURING EACH RUN DURING EACH RUN DURING EACH RUN
 var level = 0
 var minute = 0
+	#PLAYER PLUS STATS
+var plusresistance = 0
+var plussoulpower = 0
+var plussharpness = 0
+var plusspeed = 0
+
 var bigenemy = false
 var score = 0
 var startweapon = null
@@ -114,6 +120,11 @@ func load_game():
 			clegsstr = save_data.get("clegsstr", "1")
 			set_skin_variables(save_data.get("skin_variables", {}))
 func reset_weapons_and_enemies():
+	# Reset plus stats
+	plusresistance = 0
+	plussoulpower = 0
+	plussharpness = 0
+	plusspeed = 0
 	# Reset weapon levels to 0
 	lvlsword = 0
 	lvldagger = 0

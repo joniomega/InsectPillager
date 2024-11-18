@@ -4,7 +4,7 @@
             "outputFile": "com.godot.game-mergeReleaseResources-9:/values-pl/values-pl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jonif\\Desktop\\PROJECTES\\videojogo\\InsectPillager\\android\\build\\res\\values-pl\\godot_project_name_string.xml",
+                    "source": "C:\\Users\\jonif\\Desktop\\PROJECTES\\InsectPillager\\android\\build\\res\\values-pl\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",

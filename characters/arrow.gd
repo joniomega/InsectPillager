@@ -39,7 +39,8 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	# Aplicar daño al enemigo si colisiona con él
 	if body.is_in_group("enemy"):
-		body.recibir_danio(DAMAGE)
+		var damage = DAMAGE + global.plussharpness
+		body.recibir_danio(damage)
 	# REDUCIR DAÑO EN LOS SIGUIENTES ENEMIGOS
 	if DAMAGE > 5:
 		DAMAGE = DAMAGE -5

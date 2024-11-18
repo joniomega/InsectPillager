@@ -1,0 +1,367 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/border2.png" type="Texture" id=2]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=3]
+[ext_resource path="res://assets/FLORLRG_.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/objectstar.png" type="Texture" id=5]
+[ext_resource path="res://characters/player/items/object.gd" type="Script" id=6]
+[ext_resource path="res://assets/background.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/arrow2.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/button3.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/icon_stats.png" type="Texture" id=10]
+[ext_resource path="res://assets/object.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=21]
+resource_name = "default"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=699]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 15, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 30, 0, 15, 15 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 45, 0, 15, 15 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 699 ) ],
+"loop": true,
+"name": "chest",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "star",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=700]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=698]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 224, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=701]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 224, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "acientbug scroll",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 700 ) ],
+"loop": true,
+"name": "ancient bug knife",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 698 ) ],
+"loop": true,
+"name": "beak totem",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "bluecristal collar",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "book of horrors",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "double plate ring",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "greenshell ring",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "magnet collar",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 701 ) ],
+"loop": true,
+"name": "verdant shield",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=696]
+size = 19
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=692]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=693]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=694]
+atlas = ExtResource( 10 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=695]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=697]
+animations = [ {
+"frames": [ SubResource( 692 ) ],
+"loop": true,
+"name": "resistance",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 693 ) ],
+"loop": true,
+"name": "sharpness",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 694 ) ],
+"loop": true,
+"name": "soulpower",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 695 ) ],
+"loop": true,
+"name": "speed",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=16]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 1, 0.988235, 0.647059, 1 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 1, 0.980392, 0.384314, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+
+[node name="object" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="star" type="Node2D" parent="."]
+
+[node name="animation" type="AnimationPlayer" parent="star"]
+anims/default = SubResource( 21 )
+
+[node name="sprite" type="AnimatedSprite" parent="star"]
+position = Vector2( -3.57628e-07, 0.291561 )
+scale = Vector2( 0.875, 0.838555 )
+frames = SubResource( 14 )
+animation = "chest"
+speed_scale = 0.95
+
+[node name="Area2D" type="Area2D" parent="star"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="star/Area2D"]
+shape = SubResource( 15 )
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite" parent="canvas"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 0.705882 )
+position = Vector2( 514, 302 )
+scale = Vector2( 16.8672, 10.0859 )
+texture = ExtResource( 7 )
+
+[node name="back" type="Control" parent="canvas"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Border2" type="Sprite" parent="canvas/back"]
+position = Vector2( 512.5, 248.233 )
+scale = Vector2( 5.78409, 5.80758 )
+texture = ExtResource( 2 )
+
+[node name="object" type="Control" parent="canvas"]
+margin_top = -11.0
+margin_right = 40.0
+margin_bottom = 29.0
+
+[node name="icon" type="AnimatedSprite" parent="canvas/object"]
+position = Vector2( 379, 239 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 7 )
+animation = "verdant shield"
+
+[node name="Shadow" type="Sprite" parent="canvas/object/icon"]
+show_behind_parent = true
+position = Vector2( -0.400002, -1.4 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="title" type="Label" parent="canvas/object"]
+margin_left = 503.0
+margin_top = 189.0
+margin_right = 722.0
+margin_bottom = 220.0
+custom_colors/font_color = Color( 0.635294, 0.635294, 0.635294, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Collar of attaction"
+align = 1
+
+[node name="Shadow2" type="Sprite" parent="canvas/object/title"]
+show_behind_parent = true
+position = Vector2( 108, 42.375 )
+scale = Vector2( 8.375, 5.89844 )
+texture = ExtResource( 3 )
+
+[node name="desc" type="Label" parent="canvas/object/title"]
+margin_left = -10.0
+margin_top = 27.0
+margin_right = 231.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 9 )
+text = "This collar will attact 
+shells droped from enemies"
+align = 1
+
+[node name="statchange" type="Label" parent="canvas/object"]
+margin_left = 553.0
+margin_top = 268.0
+margin_right = 704.0
+margin_bottom = 289.0
+custom_colors/font_color = Color( 1, 0.211765, 0, 1 )
+custom_fonts/font = SubResource( 696 )
+text = "+10 soulpower"
+
+[node name="iconstat" type="AnimatedSprite" parent="canvas/object/statchange"]
+position = Vector2( -18.5, 10 )
+scale = Vector2( 2.4375, 2.375 )
+frames = SubResource( 697 )
+animation = "sharpness"
+
+[node name="buttons" type="Control" parent="canvas"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="buttontake" type="Button" parent="canvas/buttons"]
+pause_mode = 2
+margin_left = 418.0
+margin_top = 297.0
+margin_right = 601.0
+margin_bottom = 354.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 1, 0.388235, 1 )
+custom_colors/font_color_pressed = Color( 0.972549, 1, 0.160784, 1 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+text = "TAKE"
+icon = ExtResource( 8 )
+align = 0
+expand_icon = true
+
+[node name="buttonrecy" type="Button" parent="canvas/buttons"]
+pause_mode = 2
+visible = false
+margin_left = 531.0
+margin_top = 307.0
+margin_right = 708.0
+margin_bottom = 365.0
+custom_colors/font_color = Color( 1, 0.129412, 0.129412, 1 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+text = "RECYCLE"
+
+[connection signal="body_entered" from="star/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="canvas/buttons/buttontake" to="." method="_on_Button_pressed"]

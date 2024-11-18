@@ -5,7 +5,7 @@ const SPEED = 140
 const MAX_BOUNCES = 3
 const ROTATION_SPEED = 180  # Degrees per second for continuous rotation
 
-var damage = 15
+var damage_axerang = 15
 var direction = Vector2.ZERO
 var target_position = Vector2.ZERO
 var enemies_hit = 0
@@ -15,8 +15,8 @@ var global
 
 func _ready():
 	global = get_node("/root/global")
-	if global.lvlcrossbow >= 1:
-		damage += global.lvlcrossbow + global.lvlcrossbow
+	if global.lvlaxerang >= 1:
+		damage_axerang = global.lvlaxerang + global.lvlaxerang
 	_update_enemy_list()
 	_set_next_target()
 
@@ -53,6 +53,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body and body.is_in_group("enemy") and not body.is_queued_for_deletion():
+		var damage = damage_axerang + global.plussharpness
 		body.recibir_danio(damage)
 		enemies_hit += 1
 		if enemies_hit >= MAX_BOUNCES:

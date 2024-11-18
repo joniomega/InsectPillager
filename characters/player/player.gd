@@ -1,13 +1,16 @@
 extends KinematicBody2D
 #VARIABLE PARA SCRIPT GLOBAL
 var global
-# Variables para el movimiento
+# Variables STATS JUGADOR
+var vida = 100
+var resistance = 0
+var sharpness = 0
+var soulpower = 0
 var speed = 70
 var velocity = Vector2()
 
-# Variables para la vida del jugador
+# Variables jugador
 var score_actual = 0
-var vida = 100
 var experience = 0
 var maxexp = 10
 var potions = 0
@@ -95,17 +98,11 @@ func _ready():
 	legs.play(clegsstr+"_down")
 	body.play(cbodystr+"_down")
 	head.play(cheadstr+"_down")
-	
 	pnum.text = str(potions)
-#	global.toggle_pause()
-#	animated_sprite.play(actualskin+"revive")
-#	yield(animated_sprite,"animation_finished")
-#	global.toggle_pause()
-
+	reloadstats("speed")
 
 func _physics_process(delta):
 	velocity = Vector2()
-
 	# Use the VirtualJoystick input
 	var joystick_input = joystick.get_value()  # get the direction from the plugin joystick
 
@@ -121,13 +118,28 @@ func _physics_process(delta):
 			velocity.x -= 1
 		if Input.is_action_pressed("ui_right"):
 			velocity.x += 1
-
 	# Normalize and move the player
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
-
 	# Update the player animations based on movement
 	update_animation()
+
+func reloadstats(stat):
+	if stat:
+		match stat:
+			"resistance":
+				resistance = global.plusresistance + resistance
+			"sharpness":
+				sharpness = global.plussharpness + sharpness
+			"soulpower":
+				soulpower = global.plussoulpower + soulpower
+			"speed":
+				speed = global.plusspeed + speed
+	$UI/Control/stats/speed.text = str(speed)
+	$UI/Control/stats/resistance.text = str(resistance)
+	$UI/Control/stats/sharpness.text = str(sharpness)
+	$UI/Control/stats/soulpower.text = str(soulpower)
+	pass
 
 func update_animation():
 	if velocity.length_squared() > 0:
@@ -160,14 +172,19 @@ func recibir_danio(damage):
 		$hurt.play()
 		$blood.restart()
 		$blood.emitting = true
-		vida -= damage
+		var finaldamage = damage - resistance
+		if finaldamage >= 0:
+			print(damage)
+			vida = vida - finaldamage
+			print(str(damage-resistance)+" DAÑO FINAL")
+		
 		# Actualizar el valor del ProgressBar de la UI con la vida actual del jugador
 		vida_progressbar.value = vida
 		inmune = true
 		# Modulate the AnimatedSprite to grey semi-transparent color
-		head.modulate = Color(2, 2, 2, 1)
-		body.modulate = Color(2, 2, 2, 1)
-		legs.modulate = Color(2, 2, 2, 1)
+		head.modulate = Color(3, 3, 3, 1)
+		body.modulate = Color(3, 3, 3, 1)
+		legs.modulate = Color(3, 3, 3, 1)
 		$Inmunity.start()
 		if vida <= 0:
 			global.toggle_pause()
@@ -193,7 +210,7 @@ func curar_dano(cura):
 	if global.rank == 5:
 		cura = cura + 10
 		pass
-	if global.rank == 6:
+	elif global.rank == 6:
 		cura = cura + 20
 		pass
 	if vida <= 100:
@@ -201,13 +218,9 @@ func curar_dano(cura):
 			vida = 100
 		else:
 			vida += cura
-		vida_progressbar.value = vida
+	vida_progressbar.value = vida
 	$UI.visible = true
 	$UI/Control.visible = true
-	pass
-#METODO POCION DE SPEED
-func more_speed(plusspeed):
-	speed += plusspeed
 	pass
 
 # Método llamado cuando el Timer termina
@@ -269,9 +282,9 @@ func _on_pause_pressed():
 	global.toggle_pause()
 	pass # Replace with function body.
 
-
 func _on_exit_pressed():
 	global.reset_weapons_and_enemies()
+	global.save_game()
 	global.toggle_pause()
 	get_tree().change_scene("res://scenes/mercado.tscn")
 	pass # Replace with function body.

@@ -35,7 +35,7 @@ func _on_Timer_timeout():
 			spawn_enemy_delayed(enemy_big_scene)
 			if $Timer.wait_time >0.5:
 				$Timer.wait_time = $Timer.wait_time -0.1
-				print(str($Timer.wait_time))
+				
 				minutes = global.minute
 		else:
 			var random_value = randf()
@@ -54,7 +54,7 @@ func _on_Timer_timeout():
 
 func spawn_enemy_delayed(enemy_scene):
 	# Debugging: Print a message to confirm this function is being called
-	print("Spawning enemy delayed...")
+	
 
 	# Set the spawn node at the intended spawn location
 	var random_position = generate_random_position_within_spawn_area()
@@ -64,14 +64,14 @@ func spawn_enemy_delayed(enemy_scene):
 	enemy_to_spawn = enemy_scene
 
 	# Debugging: Print the chosen position
-	print("Spawn node position set to: ", spawn_node.global_position)
+	
 
 	# Start the spawn timer
 	spawn_timer.start()
 
 func _on_spawntimer_timeout():
 	# Debugging: Print a message to confirm this function is being called
-	print("Spawn timer timeout, creating enemy...")
+	
 
 	# Instantiate the enemy when the timer runs out
 	if enemy_to_spawn:
@@ -80,13 +80,13 @@ func _on_spawntimer_timeout():
 		get_parent().call_deferred("add_child", new_enemy)
 
 		# Debugging: Confirm the enemy is being added
-		print("Enemy spawned at position: ", new_enemy.position)
+		
 
 		# Reset the enemy_to_spawn after spawning
 		enemy_to_spawn = null
 	else:
 		# Debugging: In case the enemy scene is not found
-		print("No enemy scene found to spawn!")
+		pass
 
 func generate_random_position_within_spawn_area() -> Vector2:
 	# Get the radius based on the size of the CollisionShape2D in SpawnArea

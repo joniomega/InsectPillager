@@ -1,12 +1,195 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/border2.png" type="Texture" id=2]
 [ext_resource path="res://assets/shadow.png" type="Texture" id=3]
+[ext_resource path="res://assets/FLORLRG_.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/essence.png" type="Texture" id=5]
+[ext_resource path="res://characters/player/items/object.gd" type="Script" id=6]
+[ext_resource path="res://assets/background.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/arrow2.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/button3.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/icon_stats.png" type="Texture" id=10]
+[ext_resource path="res://assets/object.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/coin.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=21]
+resource_name = "default"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=699]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=702]
+atlas = ExtResource( 11 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 699 ) ],
+"loop": true,
+"name": "chestclosed",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 702 ) ],
+"loop": true,
+"name": "chestopen",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 16.0
+
+[sub_resource type="Gradient" id=707]
+offsets = PoolRealArray( 0, 0.00757576, 0.44697, 0.954545, 0.969697, 0.984848 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0.088, 0.088, 0.088, 1, 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=703]
+resource_name = "opening"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("chestsprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "closed", "open" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("chestsprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.3, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -35.0, 35.0, 0.0, -35.0, 35.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("chestsprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9, 1.3, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9, 9 ), Vector2( 11, 11 ), Vector2( 9, 9 ), Vector2( 11, 11 ), Vector2( 13, 13 ), Vector2( 14, 14 ), Vector2( 10, 10 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("back:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.6, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("object:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.6, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("buttons:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.6, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("buttons/buttontake:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("chestsprite/blood:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="AtlasTexture" id=704]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=705]
+atlas = ExtResource( 11 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=706]
+animations = [ {
+"frames": [ SubResource( 704 ) ],
+"loop": true,
+"name": "closed",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 705 ) ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 64, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=700]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=698]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
@@ -28,106 +211,317 @@ region = Rect2( 128, 224, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 96, 224, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=701]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 224, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
-"name": "acientbugscroll",
+"name": "acientbug scroll",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 700 ) ],
+"loop": true,
+"name": "ancient bug knife",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 698 ) ],
+"loop": true,
+"name": "beak totem",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "bluecristalcollar",
+"name": "bluecristal collar",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "bookofhorrors",
+"name": "book of horrors",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "doubleplatering",
+"name": "double plate ring",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "greenshellring",
+"name": "greenshell ring",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "magnetcollar",
+"name": "magnet collar",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 701 ) ],
+"loop": true,
+"name": "verdant shield",
 "speed": 5.0
 } ]
 
+[sub_resource type="DynamicFont" id=8]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=696]
+size = 19
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=692]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=693]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=694]
+atlas = ExtResource( 10 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=695]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=697]
+animations = [ {
+"frames": [ SubResource( 692 ) ],
+"loop": true,
+"name": "resistance",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 693 ) ],
+"loop": true,
+"name": "sharpness",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 694 ) ],
+"loop": true,
+"name": "soulpower",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 695 ) ],
+"loop": true,
+"name": "speed",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=16]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 1, 0.988235, 0.647059, 1 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 1, 0.980392, 0.384314, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 30, 14 )
+
 [node name="object" type="Node2D"]
+script = ExtResource( 6 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="star" type="Node2D" parent="."]
 
-[node name="back" type="Control" parent="CanvasLayer"]
+[node name="animation" type="AnimationPlayer" parent="star"]
+anims/default = SubResource( 21 )
+
+[node name="sprite" type="AnimatedSprite" parent="star"]
+position = Vector2( -3.57628e-07, 0.291561 )
+frames = SubResource( 14 )
+animation = "chestclosed"
+speed_scale = 0.95
+
+[node name="Area2D" type="Area2D" parent="star"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="star/Area2D"]
+shape = SubResource( 15 )
+
+[node name="canvas" type="CanvasLayer" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="canvas"]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 509, -289 )
+scale = Vector2( 2, 2 )
+amount = 40
+lifetime = 5.0
+preprocess = 7.0
+texture = ExtResource( 5 )
+emission_shape = 2
+emission_rect_extents = Vector2( 300, 1 )
+spread = 180.0
+gravity = Vector2( 0, 60 )
+scale_amount = 3.0
+color_ramp = SubResource( 707 )
+
+[node name="animation" type="AnimationPlayer" parent="canvas"]
+pause_mode = 2
+anims/opening = SubResource( 703 )
+
+[node name="Timer" type="Timer" parent="canvas"]
+
+[node name="Background" type="Sprite" parent="canvas"]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 0.705882 )
+position = Vector2( 514, 302 )
+scale = Vector2( 16.8672, 10.0859 )
+texture = ExtResource( 7 )
+
+[node name="chestsprite" type="AnimatedSprite" parent="canvas"]
+position = Vector2( 510, 254 )
+scale = Vector2( 10, 10 )
+frames = SubResource( 706 )
+animation = "open"
+
+[node name="blood" type="CPUParticles2D" parent="canvas/chestsprite"]
+pause_mode = 2
+emitting = false
+amount = 10
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.9
+lifetime_randomness = 0.3
+local_coords = false
+texture = ExtResource( 12 )
+emission_shape = 2
+emission_rect_extents = Vector2( 3, 1 )
+direction = Vector2( 0, -200 )
+gravity = Vector2( 0, 800 )
+initial_velocity = 30.0
+initial_velocity_random = 1.0
+scale_amount = 6.0
+scale_amount_random = 0.2
+
+[node name="back" type="Control" parent="canvas"]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Border2" type="Sprite" parent="CanvasLayer/back"]
-position = Vector2( 511.5, 245 )
-scale = Vector2( 18.1667, 6.43333 )
+[node name="Border2" type="Sprite" parent="canvas/back"]
+position = Vector2( 512.5, 248.233 )
+scale = Vector2( 5.78409, 5.80758 )
 texture = ExtResource( 2 )
 
-[node name="object" type="Control" parent="CanvasLayer"]
+[node name="object" type="Control" parent="canvas"]
+margin_top = -11.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 29.0
 
-[node name="icon" type="AnimatedSprite" parent="CanvasLayer/object"]
-position = Vector2( 378, 239 )
+[node name="icon" type="AnimatedSprite" parent="canvas/object"]
+position = Vector2( 379, 239 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 7 )
-animation = "magnetcollar"
+animation = "magnet collar"
 
-[node name="Shadow" type="Sprite" parent="CanvasLayer/object/icon"]
+[node name="Shadow" type="Sprite" parent="canvas/object/icon"]
 show_behind_parent = true
 position = Vector2( -0.400002, -1.4 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 
-[node name="Shadow2" type="Sprite" parent="CanvasLayer/object"]
-position = Vector2( 611, 231.375 )
-scale = Vector2( 8.375, 5.89844 )
-texture = ExtResource( 3 )
-
-[node name="title" type="Label" parent="CanvasLayer/object"]
-margin_left = 559.0
-margin_top = 184.0
-margin_right = 671.0
-margin_bottom = 215.0
+[node name="title" type="Label" parent="canvas/object"]
+margin_left = 503.0
+margin_top = 189.0
+margin_right = 722.0
+margin_bottom = 220.0
+custom_colors/font_color = Color( 0.635294, 0.635294, 0.635294, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Collar of attaction"
 align = 1
 
-[node name="desc" type="Label" parent="CanvasLayer/object/title"]
-margin_left = -35.0
-margin_top = 24.0
-margin_right = 146.0
-margin_bottom = 71.0
+[node name="Shadow2" type="Sprite" parent="canvas/object/title"]
+show_behind_parent = true
+position = Vector2( 108, 42.375 )
+scale = Vector2( 8.375, 5.89844 )
+texture = ExtResource( 3 )
+
+[node name="desc" type="Label" parent="canvas/object/title"]
+margin_left = -10.0
+margin_top = 27.0
+margin_right = 231.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 9 )
 text = "This collar will attact 
 shells droped from enemies"
 align = 1
 
-[node name="buttons" type="Control" parent="CanvasLayer"]
+[node name="statchange" type="Label" parent="canvas/object"]
+margin_left = 553.0
+margin_top = 268.0
+margin_right = 704.0
+margin_bottom = 289.0
+custom_colors/font_color = Color( 1, 0.211765, 0, 1 )
+custom_fonts/font = SubResource( 696 )
+text = "+10 soulpower"
+
+[node name="iconstat" type="AnimatedSprite" parent="canvas/object/statchange"]
+position = Vector2( -18.5, 10 )
+scale = Vector2( 2.4375, 2.375 )
+frames = SubResource( 697 )
+animation = "sharpness"
+
+[node name="buttons" type="Control" parent="canvas"]
+pause_mode = 2
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Button" type="Button" parent="CanvasLayer/buttons"]
-modulate = Color( 0.0941176, 1, 0, 1 )
-margin_left = 316.0
-margin_top = 315.0
-margin_right = 452.0
-margin_bottom = 361.0
+[node name="buttontake" type="Button" parent="canvas/buttons"]
+pause_mode = 2
+margin_left = 418.0
+margin_top = 297.0
+margin_right = 601.0
+margin_bottom = 354.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 1, 0.388235, 1 )
+custom_colors/font_color_pressed = Color( 0.972549, 1, 0.160784, 1 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 text = "TAKE"
+icon = ExtResource( 8 )
+align = 0
+expand_icon = true
 
-[node name="Button2" type="Button" parent="CanvasLayer/buttons"]
-modulate = Color( 1, 0, 0, 1 )
-margin_left = 572.0
-margin_top = 313.0
+[node name="buttonrecy" type="Button" parent="canvas/buttons"]
+pause_mode = 2
+visible = false
+margin_left = 531.0
+margin_top = 307.0
 margin_right = 708.0
-margin_bottom = 361.0
+margin_bottom = 365.0
+custom_colors/font_color = Color( 1, 0.129412, 0.129412, 1 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 text = "RECYCLE"
+
+[connection signal="body_entered" from="star/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="pressed" from="canvas/buttons/buttontake" to="." method="_on_Button_pressed"]

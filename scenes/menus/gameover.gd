@@ -20,6 +20,7 @@ func _ready():
 			global.sstate = 6
 			var start = Dialogic.start("win3")
 			add_child(start)
+	global.save_game()
 	#RELLENAR ELS LABELS SCORE I SHELLS
 	$Control/scoretitle/score.text = str(global.score)
 	$Control/scoretitle2/shells.text = str(global.shells)

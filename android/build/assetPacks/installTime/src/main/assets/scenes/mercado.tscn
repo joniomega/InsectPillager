@@ -1191,7 +1191,7 @@ margin_bottom = 836.222
 position = Vector2( 1174.89, 853.111 )
 scale = Vector2( 0.890046, 0.810295 )
 frames = SubResource( 145 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="talkppriest" type="Button" parent="back/Puppetpriest"]
@@ -1211,7 +1211,7 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Guard" type="AnimatedSprite" parent="back"]
@@ -1256,14 +1256,14 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
-frame = 3
+frame = 2
 playing = true
 
 [node name="shieldwarrior" type="AnimatedSprite" parent="back"]
 position = Vector2( 1093.34, 821.332 )
 scale = Vector2( 0.811806, 0.822569 )
 frames = SubResource( 184 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="talkshieldwarrior" type="Button" parent="back/shieldwarrior"]
@@ -1283,7 +1283,6 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
-frame = 1
 playing = true
 
 [node name="tutorial" type="Node2D" parent="."]
@@ -1315,7 +1314,7 @@ position = Vector2( 340.556, 123.333 )
 rotation = -1.5708
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="state1" type="Node2D" parent="tutorial"]
@@ -1344,7 +1343,7 @@ position = Vector2( 168.889, 85 )
 rotation = 3.14159
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="state2" type="Node2D" parent="tutorial"]
@@ -1373,7 +1372,7 @@ position = Vector2( -167.917, 133.889 )
 rotation = 3.14159
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="currentcamera" type="Camera2D" parent="."]
@@ -1419,7 +1418,7 @@ attenuation = 0.267943
 bus = "Effects"
 
 [node name="buttonsound" type="AudioStreamPlayer2D" parent="currentcamera"]
-position = Vector2( -283.889, -168.333 )
+position = Vector2( 0.55545, 30.5559 )
 stream = ExtResource( 18 )
 volume_db = -10.0
 bus = "Effects"

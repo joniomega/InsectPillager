@@ -23,6 +23,12 @@
 			"volume": -5
 		},
 		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You feel every part of you come to live... "
+		},
+		{
 			"animation": "[Default]",
 			"animation_length": 0,
 			"change_mirror_portrait": false,

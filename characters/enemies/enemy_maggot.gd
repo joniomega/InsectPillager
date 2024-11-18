@@ -7,9 +7,9 @@ var player = null
 var playerbody
 var exp_orb_scene = preload("res://characters/ExpOrb.tscn")
 # Variables para el daño
-var damage = 5
+var damagemag = 10
 # Variables para la vida del enemigo
-var vida = 35
+var vida = 25
 
 # Variables para AnimatedSprite
 var animated_sprite
@@ -18,9 +18,9 @@ func _ready():
 	self.z_index = 10
 	global = get_node("/root/global")
 	#AUGMENTAR VIDA I DAÑO SEGUN EL TIEMPO:
-	if global.enemylvl >= 1:
+	if global.enemylvl > 1:
 		vida = vida * global.enemylvl - 10
-		damage = damage * global.enemylvl - 10
+		damagemag = damagemag * global.enemylvl - 10
 	# Obtener el AnimatedSprite
 	if randi() % 2 == 0:
 		animated_sprite = $AnimatedSprite2
@@ -41,7 +41,7 @@ func _physics_process(delta):
 		# Update animation based on direction
 		update_animation(direction)
 	if playerbody != null:
-		playerbody.recibir_danio(damage)
+		playerbody.recibir_danio(damagemag)
 
 func update_animation(direction):
 	if abs(direction.x) > abs(direction.y):

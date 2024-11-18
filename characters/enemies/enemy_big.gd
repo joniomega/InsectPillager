@@ -5,7 +5,7 @@ var global
 var speed = 35  # Adjust as needed
 var player = null
 var playerbody
-var exp_orb_scene = preload("res://characters/ExpOrb_big.tscn")
+var exp_orb_scene = preload("res://characters/player/items/object.tscn")
 # Variables para el daño
 var damage = 30
 # Variables para la vida del enemigo

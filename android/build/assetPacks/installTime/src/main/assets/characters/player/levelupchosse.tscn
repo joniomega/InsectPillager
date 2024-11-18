@@ -196,7 +196,7 @@ texture = ExtResource( 5 )
 position = Vector2( -42.5, 15.008 )
 scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
-animation = "firesparks"
+animation = "axerang"
 
 [node name="press1" type="Button" parent="option1"]
 modulate = Color( 1, 1, 1, 0 )

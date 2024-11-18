@@ -30,7 +30,6 @@ func _on_options_pressed():
 	$buttonsound.play()
 	show_and_hide(Options,MainMenu)
 
-
 func show_and_hide(first,Second):
 	first.show()
 	Second.hide()

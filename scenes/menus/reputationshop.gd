@@ -16,6 +16,9 @@ func _ready():
 	global = get_node("/root/global")
 	$shells/shells.text = str(global.shells)
 	_update_ranks()
+	$scroll/progress/rank1/content/unlockad1/arrow.visible = false
+	if global.rank >= 1 && global.skinhead4 == false:
+		$scroll/progress/rank1/content/unlockad1/arrow.visible = true
 
 func _update_ranks():
 	var progress_values = [3, 25, 48, 63, 83, 100, 123]  # Progress values based on rank
@@ -75,6 +78,8 @@ func _on_rank_pressed(rank_idx):
 		var unlockad = content.get_node(rank_node["unlockad"])
 		unlockad.disabled = false
 		_set_modulation(content, Color(1, 1, 1, 1))
+	if global.rank >= 1 && global.skinhead4 == false:
+		$scroll/progress/rank1/content/unlockad1/arrow.visible = true
 
 func _on_rank1_pressed():
 	_on_rank_pressed(0)

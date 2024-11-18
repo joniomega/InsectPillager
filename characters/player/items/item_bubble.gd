@@ -20,8 +20,7 @@ func _ready():
 
 func _process(delta):
 	if global.lvlbubblebool == true:
-		damage_per_tick = damage_per_tick + 1
-		print(str("BUBBLE DAMAGE: ",damage_per_tick))
+		damage_per_tick = damage_per_tick + 2 + global.plussoulpower
 		global.lvlbubblebool = false
 		pass
 	

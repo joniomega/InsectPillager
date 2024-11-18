@@ -11,7 +11,7 @@ func _ready():
 	timer.start()
 func _process(delta):
 	if global.lvlcristalbool == true:
-		damage_amount = damage_amount + 5
+		damage_amount = damage_amount + 5 + global.plussoulpower
 		global.lvlcristalbool = false
 		pass
 
