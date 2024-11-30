@@ -2436,7 +2436,7 @@ points = PoolVector2Array( 20.6025, 34.3132, 18.2582, 33.9784, 18.5931, 33.3086,
 [sub_resource type="DynamicFont" id=213]
 size = 32
 outline_size = 3
-outline_color = Color( 0.6, 0.639216, 0.72549, 1 )
+outline_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
 font_data = ExtResource( 6 )
 
 [sub_resource type="AtlasTexture" id=210]
@@ -2506,6 +2506,7 @@ script = ExtResource( 9 )
 visible = false
 
 [node name="Sprite-0002" type="Sprite" parent="player/tutoriallvl/ui/tip1"]
+visible = false
 modulate = Color( 1.6, 2, 2, 0.65098 )
 position = Vector2( 127, 257.08 )
 scale = Vector2( 7.5625, 5.115 )
@@ -2527,13 +2528,14 @@ position = Vector2( 49, 315 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="tip2" type="Node2D" parent="player/tutoriallvl/ui"]
 visible = false
 
 [node name="Sprite-0002" type="Sprite" parent="player/tutoriallvl/ui/tip2"]
+visible = false
 modulate = Color( 1.6, 2, 2, 0.65098 )
 position = Vector2( 318.5, 87.84 )
 scale = Vector2( 13.5313, 5.23 )
@@ -2541,6 +2543,11 @@ texture = ExtResource( 7 )
 
 [node name="ShellIcon" type="Sprite" parent="player/tutoriallvl/ui/tip2"]
 position = Vector2( 315, 88 )
+scale = Vector2( 1.375, 1.32813 )
+texture = ExtResource( 10 )
+
+[node name="ShellIcon2" type="Sprite" parent="player/tutoriallvl/ui/tip2"]
+position = Vector2( 361, 88 )
 scale = Vector2( 1.375, 1.32813 )
 texture = ExtResource( 10 )
 
@@ -2559,6 +2566,7 @@ text = "COLLECT SHELLS (     ) TO INCREASE EXP"
 visible = false
 
 [node name="Sprite-0002" type="Sprite" parent="player/tutoriallvl/ui/tip3"]
+visible = false
 modulate = Color( 1.6, 2, 2, 0.65098 )
 position = Vector2( 884, 277.84 )
 scale = Vector2( 8.625, 5.23 )
@@ -2580,22 +2588,23 @@ position = Vector2( 962, 337 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="tip4" type="Node2D" parent="player/tutoriallvl/ui"]
 visible = false
 
 [node name="Sprite-0002" type="Sprite" parent="player/tutoriallvl/ui/tip4"]
+visible = false
 modulate = Color( 1.6, 2, 2, 0.65098 )
-position = Vector2( 521, 106.84 )
+position = Vector2( 558, 106.84 )
 scale = Vector2( 15.625, 5.23 )
 texture = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="player/tutoriallvl/ui/tip4"]
-margin_left = 288.0
+margin_left = 325.0
 margin_top = 82.0
-margin_right = 759.0
+margin_right = 796.0
 margin_bottom = 124.0
 custom_colors/font_color_shadow = Color( 0.6, 0.584314, 0.333333, 1 )
 custom_constants/shadow_offset_x = 0

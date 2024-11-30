@@ -2527,7 +2527,7 @@ position = Vector2( 49, 315 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="tip2" type="Node2D" parent="player/tutoriallvl/ui"]
@@ -2580,7 +2580,7 @@ position = Vector2( 962, 337 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="tip4" type="Node2D" parent="player/tutoriallvl/ui"]
@@ -2588,14 +2588,14 @@ visible = false
 
 [node name="Sprite-0002" type="Sprite" parent="player/tutoriallvl/ui/tip4"]
 modulate = Color( 1.6, 2, 2, 0.65098 )
-position = Vector2( 521, 106.84 )
+position = Vector2( 558, 106.84 )
 scale = Vector2( 15.625, 5.23 )
 texture = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="player/tutoriallvl/ui/tip4"]
-margin_left = 288.0
+margin_left = 325.0
 margin_top = 82.0
-margin_right = 759.0
+margin_right = 796.0
 margin_bottom = 124.0
 custom_colors/font_color_shadow = Color( 0.6, 0.584314, 0.333333, 1 )
 custom_constants/shadow_offset_x = 0

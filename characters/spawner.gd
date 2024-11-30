@@ -6,6 +6,7 @@ var enemy_elite_scene = preload("res://characters/enemies/enemy_elite.tscn")
 var enemy_big_scene = preload("res://characters/enemies/enemy_big.tscn")
 var minutes = 0
 var max_enemies = 100
+var max_bigenemies = 5
 var total_enemies = 0
 var global
 var enemy_to_spawn = null  # Variable to hold the enemy scene
@@ -26,13 +27,24 @@ func _ready():
 	if get_parent().name == "spawners3":
 		$SpawnArea/CollisionShape2D.scale.y = 1.5
 		enemy_elite_scene = preload("res://characters/enemies/enemy_slime.tscn")
+	if get_parent().name == "spawners4":
+		enemy_maggot_scene = preload("res://characters/enemies/enemy_elite.tscn")
 	# Start the initial spawn
 	_on_Timer_timeout()
 
 func _on_Timer_timeout():
 	if global.enemitotal <= global.enemimax:
 		if global.minute != minutes:
-			spawn_enemy_delayed(enemy_big_scene)
+			if global.enemibigtotal <= max_bigenemies:
+				spawn_enemy_delayed(enemy_big_scene)
+			else:
+				var random_value = randf()
+				if random_value <= 0.23:
+					spawn_enemy_delayed(enemy_warrior_scene)
+				elif random_value <= 0.66:
+					spawn_enemy_delayed(enemy_maggot_scene)
+				else:
+					spawn_enemy_delayed(enemy_elite_scene)
 			if $Timer.wait_time >0.5:
 				$Timer.wait_time = $Timer.wait_time -0.1
 				

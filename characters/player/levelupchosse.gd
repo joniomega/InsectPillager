@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 # Declare member variables here. Examples:
@@ -23,11 +23,13 @@ func _ready():
 	global = get_node("/root/global")
 	if global:
 		global.toggle_pause()  # Pausing the game
+		$animation.play("start")
 	else:
 		$option1.text = "Player not found" # Mensaje de error si player no se encuentra
 	# This ensures that the random number generator is initialized differently each time the game starts
 	randomize()
 	choose_random_item()
+	
 
 func choose_random_item():
 	# Get a random index for the items array
@@ -50,26 +52,40 @@ func choose_random_item():
 	$option2.text = option2
 	$option3/icon.play(option3)
 	$option3.text = option3
-	update_option_text(option1, $option1)
-	update_option_text(option2, $option2)
-	update_option_text(option3, $option3)
+	update_option_text(option1, $option1, $option1/icon)
+	update_option_text(option2, $option2, $option2/icon)
+	update_option_text(option3, $option3, $option3/icon)
 	
 # Function to update the text for a given option
-func update_option_text(option, label):
+func update_option_text(option, label, iconcolor):
 	if option == "sword" and global.lvlsword >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "bubble" and global.lvlbubble >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "dagger" and global.lvldagger >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "crossbow" and global.lvlcrossbow >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "scythe" and global.lvlscythe >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "cristal" and global.lvlcristal >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 	elif option == "axerang" and global.lvlaxerang >= 1:
-		label.text = option + "+damage"
+		label.text = "+damage"
+		label.add_color_override("font_color", Color(10, 10, 0.5))
+		iconcolor.modulate = Color(1.3, 1.3, 0.5, 1)
 
 func _on_option1_pressed():
 	$option1.disabled = true

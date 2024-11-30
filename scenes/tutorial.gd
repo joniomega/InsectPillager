@@ -35,6 +35,10 @@ func _process(delta):
 			$state1.visible = false
 	pass
 func tutoriallvl():
+	$ui/tip1/Label2.text = tr("tutorialtip1")
+	$ui/tip2/Label2.text = tr("tutorialtip2")
+	$ui/tip3/Label2.text = tr("tutorialtip3")
+	$ui/tip4/Label2.text = tr("tutorialtip4")
 	if global.sstate == 1:
 		$ui/tip1.visible = true
 		$ui/Timer.start()

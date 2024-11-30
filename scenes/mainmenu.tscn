@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://scenes/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://characters/npc/puppetpriest.png" type="Texture" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://icon2.png" type="Texture" id=15]
 [ext_resource path="res://characters/npc/Download40094.png" type="Texture" id=16]
 [ext_resource path="res://assets/ui/button1.png" type="Texture" id=17]
-[ext_resource path="res://assets/new_pentagrams.tres" type="DynamicFont" id=18]
+[ext_resource path="res://logo.png" type="Texture" id=18]
 [ext_resource path="res://icon.png" type="Texture" id=19]
+[ext_resource path="res://assets/FLORLRG_2.otf" type="DynamicFontData" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1363,9 +1364,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [sub_resource type="DynamicFont" id=27]
 size = 70
-outline_size = 4
-outline_color = Color( 0.113725, 0.113725, 0.113725, 1 )
-font_data = ExtResource( 11 )
+outline_size = 9
+outline_color = Color( 0.101961, 0.054902, 0.0352941, 1 )
+font_data = ExtResource( 20 )
 
 [sub_resource type="StyleBoxTexture" id=28]
 texture = ExtResource( 17 )
@@ -1386,9 +1387,9 @@ modulate_color = Color( 0.701961, 0.701961, 0.701961, 1 )
 
 [sub_resource type="DynamicFont" id=181]
 size = 50
-outline_size = 4
-outline_color = Color( 0.113725, 0.113725, 0.113725, 1 )
-font_data = ExtResource( 11 )
+outline_size = 8
+outline_color = Color( 0.101961, 0.054902, 0.0352941, 1 )
+font_data = ExtResource( 20 )
 
 [sub_resource type="StyleBoxTexture" id=33]
 texture = ExtResource( 17 )
@@ -1411,7 +1412,7 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 120, 120 )
 
 [sub_resource type="DynamicFont" id=39]
-size = 115
+size = 124
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 11 )
@@ -1582,18 +1583,6 @@ stream = ExtResource( 8 )
 volume_db = -5.0
 bus = "Effects"
 
-[node name="Label" type="Label" parent="."]
-margin_left = 1078.0
-margin_top = -262.0
-margin_right = 1394.0
-margin_bottom = -106.0
-custom_colors/font_color_shadow = Color( 0.505882, 0.505882, 0.505882, 1 )
-custom_constants/shadow_offset_x = 2
-custom_constants/line_spacing = 0
-custom_constants/shadow_offset_y = 0
-custom_fonts/font = ExtResource( 18 )
-text = "Puppet priest"
-
 [node name="Menu" type="Control" parent="."]
 margin_left = -2.0
 margin_top = 11.0
@@ -1602,9 +1591,9 @@ margin_bottom = 604.0
 
 [node name="play" type="Button" parent="Menu"]
 margin_left = 306.0
-margin_top = 245.0
+margin_top = 272.0
 margin_right = 712.0
-margin_bottom = 390.0
+margin_bottom = 417.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_fonts/font = SubResource( 27 )
 custom_styles/hover = SubResource( 28 )
@@ -1612,13 +1601,13 @@ custom_styles/pressed = SubResource( 29 )
 custom_styles/focus = SubResource( 73 )
 custom_styles/disabled = SubResource( 31 )
 custom_styles/normal = SubResource( 32 )
-text = "PL  A Y"
+text = "PLAY"
 
 [node name="options" type="Button" parent="Menu"]
 margin_left = 336.0
-margin_top = 415.0
+margin_top = 437.0
 margin_right = 688.0
-margin_bottom = 524.0
+margin_bottom = 546.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_fonts/font = SubResource( 181 )
 custom_styles/hover = SubResource( 33 )
@@ -1626,7 +1615,7 @@ custom_styles/pressed = SubResource( 34 )
 custom_styles/focus = SubResource( 73 )
 custom_styles/disabled = SubResource( 31 )
 custom_styles/normal = SubResource( 32 )
-text = "O P T I O N S"
+text = "OPTIONS"
 
 [node name="exit" type="Button" parent="Menu"]
 margin_left = 357.0
@@ -1643,10 +1632,11 @@ custom_styles/normal = SubResource( 32 )
 text = "E X I T"
 
 [node name="Label" type="Label" parent="Menu"]
-margin_left = 113.0
-margin_top = 49.0
-margin_right = 916.0
-margin_bottom = 182.0
+visible = false
+margin_left = 82.0
+margin_top = 53.0
+margin_right = 947.0
+margin_bottom = 197.0
 custom_colors/font_color = Color( 0.905882, 1, 0.67451, 1 )
 custom_colors/font_color_shadow = Color( 0.47451, 0.529412, 0.247059, 1 )
 custom_constants/shadow_offset_x = 3
@@ -1654,17 +1644,22 @@ custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 1
 custom_constants/shadow_as_outline = 0
 custom_fonts/font = SubResource( 39 )
-text = "I N S E C T   P I L  L  A G E R"
+text = "INSECTPILLAGER"
+
+[node name="Logo" type="Sprite" parent="Menu"]
+position = Vector2( 517, 144 )
+scale = Vector2( 11, 8 )
+texture = ExtResource( 18 )
 
 [node name="Node2D" type="Node2D" parent="Menu"]
 position = Vector2( 2, -11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Menu/Node2D"]
-modulate = Color( 1, 1, 1, 0.784314 )
+modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 137, 306 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Shadow" type="Sprite" parent="Menu/Node2D/AnimatedSprite"]
@@ -1673,11 +1668,11 @@ scale = Vector2( 0.578819, 0.50638 )
 texture = ExtResource( 14 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Menu/Node2D"]
-modulate = Color( 1, 1, 1, 0.784314 )
+modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 65, 435 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Shadow2" type="Sprite" parent="Menu/Node2D/AnimatedSprite2"]
@@ -1686,10 +1681,11 @@ scale = Vector2( 0.614531, 0.530702 )
 texture = ExtResource( 14 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Menu/Node2D"]
-modulate = Color( 1, 1, 1, 0.784314 )
+modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 958, 346 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
+frame = 3
 playing = true
 flip_h = true
 
@@ -1702,7 +1698,6 @@ texture = ExtResource( 14 )
 position = Vector2( 1231, 565 )
 scale = Vector2( 3.90625, 4.10547 )
 frames = SubResource( 66 )
-frame = 1
 playing = true
 
 [node name="Opciones" type="Control" parent="."]
@@ -1716,10 +1711,10 @@ margin_bottom = -11.0
 
 [node name="Volver_al_menu" type="Button" parent="Opciones"]
 anchor_top = -0.5
-margin_left = 400.0
-margin_top = 427.0
-margin_right = 722.0
-margin_bottom = 519.0
+margin_left = 320.0
+margin_top = 395.0
+margin_right = 793.0
+margin_bottom = 524.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_fonts/font = SubResource( 27 )
 custom_styles/hover = SubResource( 33 )
@@ -1815,18 +1810,18 @@ margin_bottom = 694.0
 
 [node name="shop" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 816, 496 )
+position = Vector2( 816, 539 )
 scale = Vector2( 6.0829, 5.70486 )
 frames = SubResource( 72 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Puppetpriest" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.745098 )
-position = Vector2( 211.5, 498.88 )
+position = Vector2( 211.5, 541.88 )
 scale = Vector2( 5.64063, 5.09 )
 frames = SubResource( 180 )
-frame = 1
+frame = 3
 playing = true
 
 [connection signal="pressed" from="Menu/play" to="." method="_on_play_pressed"]

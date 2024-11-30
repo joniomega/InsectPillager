@@ -9,9 +9,9 @@ var player = null
 var playerbody
 var exp_orb_scene = preload("res://characters/ExpOrb.tscn")
 # Variables para el daño
-var damageto = 10
+var damageto = 13
 # Variables para la vida del enemigo
-var vida = 40
+var vida = 50
 
 # Variables para AnimatedSprite
 var animated_sprite
@@ -21,8 +21,8 @@ func _ready():
 	global = get_node("/root/global")
 	#AUGMENTAR VIDA I DAÑO SEGUN EL TIEMPO:
 	if global.enemylvl > 1:
-		vida = vida * global.enemylvl
-		damageto = damageto * global.enemylvl
+		vida = vida + (global.enemylvl * 6)
+		damageto = damageto + (global.enemylvl * 2)
 	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite
 	# Find the player within the scene

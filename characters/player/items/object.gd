@@ -20,13 +20,13 @@ var objfinal
 
 # Define the stat effects, colors, and descriptions for each object
 var object_stats = {
-	"greenshell ring": {"stat": "resistance", "value": 3, "description": "Boosts your resistance,\nwithstands enemy hits."},
-	"double plate ring": {"stat": "sharpness", "value": 2, "description": "Used by warriors\nfrom the west isles."},
-	"book of horrors": {"stat": "soulpower", "value": 2, "description": "Dark secrets revealed,\npower for spells."},
-	"bluecristal collar": {"stat": "speed", "value": 5, "description": "Increases speed and\nagility in battle."},
-	"ancient bug knife": {"stat": "sharpness", "value": 3, "description": "A knife possibly used\nin acient rituals."},
-	"beak totem": {"stat": "speed", "value": 7, "description": "Mystical figure with a\nsteel beak and a gem."},
-	"verdant shield": {"stat": "resistance", "value": 4, "description": "A green shield showing\ncourage and liveliness."}
+	"greenshell ring": {"stat": "resistance", "value": 4, "description": "Boosts your resistance,\nwithstands enemy hits."},
+	"double plate ring": {"stat": "sharpness", "value": 4, "description": "Used by warriors\nfrom the west isles."},
+	"book of horrors": {"stat": "soulpower", "value": 4, "description": "Dark secrets revealed,\npower for spells."},
+	"bluecristal collar": {"stat": "speed", "value": 7, "description": "Increases speed and\nagility in battle."},
+	"ancient bug knife": {"stat": "sharpness", "value": 6, "description": "A knife possibly used\nin acient rituals."},
+	"beak totem": {"stat": "speed", "value": 10, "description": "Mystical figure with a\nsteel beak and a gem."},
+	"verdant shield": {"stat": "resistance", "value": 6, "description": "A green shield showing\ncourage and liveliness."}
 }
 # Define colors for each stat type
 var stat_colors = {
@@ -73,6 +73,7 @@ func _on_Area2D_body_entered(body):
 		playerr = body
 		$canvas.visible = true
 		animation.play("opening")
+		$canvas/audio.play()
 		global.toggle_pause()
 		bt.disabled = false
 		br.disabled = false

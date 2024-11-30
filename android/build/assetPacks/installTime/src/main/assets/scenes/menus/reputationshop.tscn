@@ -470,8 +470,8 @@ region_rect = Rect2( 0, 0, 30, 14 )
 
 [sub_resource type="DynamicFont" id=42]
 size = 64
-outline_size = 3
-outline_color = Color( 0.0431373, 0.0431373, 0.0705882, 1 )
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 24 )
 
 [node name="reputationshop" type="Node2D"]
@@ -981,7 +981,7 @@ modulate = Color( 0.882353, 0.882353, 0.882353, 0.956863 )
 position = Vector2( 108, 484 )
 scale = Vector2( 6.65891, 6.49458 )
 frames = SubResource( 6 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="continue" type="Button" parent="."]
@@ -1010,23 +1010,21 @@ position = Vector2( 917, 347 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="background" type="Sprite" parent="shells"]
-modulate = Color( 0.619608, 0.619608, 0.619608, 1 )
 position = Vector2( -458, 153.333 )
 scale = Vector2( 7.9375, 5.1875 )
 texture = ExtResource( 10 )
 
 [node name="shells" type="Label" parent="shells"]
-margin_left = -523.333
+margin_left = -519.166
 margin_top = 108.333
-margin_right = -428.333
+margin_right = -424.166
 margin_bottom = 191.333
 custom_colors/font_color = Color( 0.901961, 0.87451, 0.741176, 1 )
 custom_fonts/font = SubResource( 42 )
-text = "0"
+text = "000"
 
 [node name="ShellIcon" type="Sprite" parent="shells/shells"]
-position = Vector2( -30.2569, 42.7409 )
-rotation = 0.457276
+position = Vector2( -32.7569, 42.7409 )
 scale = Vector2( 2.26, 2.50397 )
 texture = ExtResource( 7 )
 

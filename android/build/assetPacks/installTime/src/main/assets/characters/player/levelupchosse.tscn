@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/weapon_free.png" type="Texture" id=1]
 [ext_resource path="res://characters/player/levelupchosse.gd" type="Script" id=2]
 [ext_resource path="res://assets/bag.png" type="Texture" id=3]
-[ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/FLORLRG_.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/shadow.png" type="Texture" id=5]
 [ext_resource path="res://assets/new_styleboxtexture.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/essence.png" type="Texture" id=7]
@@ -12,18 +12,106 @@
 [ext_resource path="res://assets/ui/border.png" type="Texture" id=10]
 [ext_resource path="res://assets/PirataOne-Regular.ttf" type="DynamicFontData" id=11]
 
+[sub_resource type="Animation" id=196]
+resource_name = "start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bag:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.917647, 0.905882, 0.878431, 0 ), Color( 0.917647, 0.905882, 0.878431, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("option1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("option2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("option3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CPUParticles2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.470588 ) ]
+}
+
 [sub_resource type="Gradient" id=188]
 offsets = PoolRealArray( 0, 0.00757576, 0.44697, 0.954545, 0.969697, 0.984848 )
 colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0.088, 0.088, 0.088, 1, 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=195]
-size = 64
-outline_size = 3
-outline_color = Color( 0.054902, 0.0470588, 0.105882, 0.858824 )
+size = 205
+outline_size = 10
+outline_color = Color( 0.054902, 0.0470588, 0.105882, 1 )
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=193]
-size = 32
+size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
@@ -124,22 +212,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="levelupchosse" type="Node2D"]
+[node name="levelupchosse" type="CanvasLayer"]
 pause_mode = 2
-position = Vector2( -219, -125 )
 scale = Vector2( 0.4, 0.4 )
+transform = Transform2D( 0.4, 0, 0, 0.4, 0, 0 )
 script = ExtResource( 2 )
 
+[node name="animation" type="AnimationPlayer" parent="."]
+anims/start = SubResource( 196 )
+
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -150.0
-margin_top = -117.5
-margin_right = 1247.0
-margin_bottom = 777.5
+margin_right = 2560.0
+margin_bottom = 1503.0
 color = Color( 0, 0, 0, 0.545098 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1, 1, 1, 0.470588 )
-position = Vector2( 537.5, -130 )
+position = Vector2( 1280, -120 )
+scale = Vector2( 4, 2.6 )
 amount = 40
 lifetime = 5.0
 preprocess = 7.0
@@ -153,31 +243,33 @@ color_ramp = SubResource( 188 )
 
 [node name="Bag" type="Sprite" parent="."]
 modulate = Color( 0.917647, 0.905882, 0.878431, 1 )
-position = Vector2( 552, 323.75 )
-scale = Vector2( 2.925, 2.88095 )
+position = Vector2( 1280, 703.125 )
+scale = Vector2( 10.5, 10.5119 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 465.0
-margin_top = 182.5
-margin_right = 817.0
-margin_bottom = 265.5
+margin_left = 1000.0
+margin_top = 200.0
+margin_right = 2119.0
+margin_bottom = 465.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 195 )
 text = "CHOSSE WEAPON"
 align = 1
 
 [node name="Border" type="Sprite" parent="Label"]
+modulate = Color( 0.776471, 0.662745, 0.596078, 1 )
 show_behind_parent = true
-position = Vector2( 175, 40 )
-scale = Vector2( 9.09091, 2.04545 )
+position = Vector2( 560, 117.5 )
+scale = Vector2( 29.0909, 5.56818 )
 texture = ExtResource( 10 )
 
 [node name="option1" type="Button" parent="."]
-margin_left = 552.5
-margin_top = 241.5
-margin_right = 639.5
-margin_bottom = 278.5
+margin_left = 1240.0
+margin_top = 380.0
+margin_right = 1327.0
+margin_bottom = 417.0
+rect_scale = Vector2( 3.59349, 3.52969 )
 custom_fonts/font = SubResource( 193 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
@@ -185,6 +277,7 @@ custom_styles/focus = SubResource( 189 )
 custom_styles/disabled = SubResource( 190 )
 custom_styles/normal = ExtResource( 6 )
 text = "test"
+icon_align = 1
 
 [node name="Shadow" type="Sprite" parent="option1"]
 modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
@@ -196,7 +289,7 @@ texture = ExtResource( 5 )
 position = Vector2( -42.5, 15.008 )
 scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
-animation = "axerang"
+animation = "scythe"
 
 [node name="press1" type="Button" parent="option1"]
 modulate = Color( 1, 1, 1, 0 )
@@ -206,10 +299,11 @@ margin_right = 87.0
 margin_bottom = 50.0
 
 [node name="option2" type="Button" parent="."]
-margin_left = 555.0
-margin_top = 315.0
-margin_right = 641.0
-margin_bottom = 359.0
+margin_left = 1242.5
+margin_top = 640.0
+margin_right = 1328.5
+margin_bottom = 684.0
+rect_scale = Vector2( 3.593, 3.53 )
 custom_fonts/font = SubResource( 193 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
@@ -228,20 +322,21 @@ texture = ExtResource( 5 )
 position = Vector2( -47, 13.008 )
 scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
-animation = "cristal"
+animation = "bubble"
 
 [node name="press2" type="Button" parent="option2"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -80.0
-margin_top = -12.0
+margin_top = -17.0
 margin_right = 87.0
 margin_bottom = 50.0
 
 [node name="option3" type="Button" parent="."]
-margin_left = 552.5
-margin_top = 382.5
-margin_right = 638.5
-margin_bottom = 423.5
+margin_left = 1242.5
+margin_top = 880.0
+margin_right = 1328.5
+margin_bottom = 921.0
+rect_scale = Vector2( 3.593, 3.53 )
 custom_fonts/font = SubResource( 193 )
 custom_styles/hover = ExtResource( 6 )
 custom_styles/pressed = ExtResource( 6 )
@@ -260,7 +355,7 @@ texture = ExtResource( 5 )
 position = Vector2( -42, 15.5079 )
 scale = Vector2( 2.031, 2.031 )
 frames = SubResource( 5 )
-animation = "scythe"
+animation = "cristal"
 
 [node name="press3" type="Button" parent="option3"]
 modulate = Color( 1, 1, 1, 0 )
@@ -272,6 +367,8 @@ margin_bottom = 50.0
 [node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, 12.5 )
 stream = ExtResource( 8 )
+volume_db = -10.0
+pitch_scale = 1.5
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 0, 12.5 )

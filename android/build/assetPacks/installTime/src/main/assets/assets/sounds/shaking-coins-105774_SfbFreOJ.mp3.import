@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shaking-coins-105774_SfbFreOJ.mp3-de8e463229e0f311af4a2b46a2cf43f9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/shaking-coins-105774_SfbFreOJ.mp3"
+dest_files=[ "res://.import/shaking-coins-105774_SfbFreOJ.mp3-de8e463229e0f311af4a2b46a2cf43f9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=1.0

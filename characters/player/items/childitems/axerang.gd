@@ -16,7 +16,7 @@ var global
 func _ready():
 	global = get_node("/root/global")
 	if global.lvlaxerang >= 1:
-		damage_axerang = global.lvlaxerang + global.lvlaxerang
+		damage_axerang = damage_axerang + global.lvlaxerang + global.lvlaxerang
 	_update_enemy_list()
 	_set_next_target()
 

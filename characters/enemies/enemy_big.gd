@@ -9,7 +9,7 @@ var exp_orb_scene = preload("res://characters/player/items/object.tscn")
 # Variables para el daño
 var damage = 30
 # Variables para la vida del enemigo
-var vida = 300
+var vida = 800
 
 # Variables para AnimatedSprite
 var animated_sprite
@@ -17,15 +17,19 @@ var animated_sprite
 func _ready():
 	self.z_index = 10
 	global = get_node("/root/global")
+	#AUGMENTAR TOTAL ENEMIGOS GRANDESSS
+	global.enemibigtotal = global.enemibigtotal + 1
 	#AUGMENTAR VIDA I DAÑO SEGUN EL TIEMPO:
 	if global.enemylvl >= 1:
-		vida = vida * global.enemylvl
-		damage = damage + global.enemylvl
+		vida = vida + (global.enemylvl * 6)
+		damage = damage + (global.enemylvl *2)
 	# Obtener el AnimatedSprite
 	if get_parent().name == "spawners1":
 		animated_sprite = $AnimatedSprite2
 	elif get_parent().name == "spawners3":
 		animated_sprite = $AnimatedSprite3
+	elif get_parent().name == "spawners4":
+		animated_sprite = $AnimatedSprite1
 	elif get_parent().name == "spawners2":
 		animated_sprite = $AnimatedSprite1
 
@@ -78,6 +82,7 @@ func recibir_danio(damage):
 	if vida <= 0:
 		# Liberar el nodo cuando la vida llega a cero
 		global.enemitotal = global.enemitotal - 1
+		global.enemibigtotal = global.enemibigtotal - 1
 		# Spawn exp orb at enemy's position
 		var exp_orb = exp_orb_scene.instance()
 		exp_orb.position = global_position

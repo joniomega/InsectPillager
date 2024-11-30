@@ -6,6 +6,7 @@ var global
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.z_index = 20
 	global = get_node("/root/global")
 	if global.minute >=5:
 		if global.level == 1:
@@ -19,6 +20,10 @@ func _ready():
 		elif global.level == 3:
 			global.sstate = 6
 			var start = Dialogic.start("win3")
+			add_child(start)
+		elif global.level == 4:
+			global.sstate = 7
+			var start = Dialogic.start("win4")
 			add_child(start)
 	global.save_game()
 	#RELLENAR ELS LABELS SCORE I SHELLS

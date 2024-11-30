@@ -12,6 +12,9 @@ var lvl3locked
 onready var lock = preload("res://assets/ui/icon_lock.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$levels/lvl.text = tr("label_lvl")+" 1"
+	$title.text = tr("ind_choose")
+	$continue.text = tr("return_")
 	global = get_node("/root/global")
 	if global.sstate <=3:
 		lvl1locked = false
@@ -107,32 +110,47 @@ func _on_lvl_pressed():
 				Transition.change_scene("res://scenes/level3.tscn")
 			else:
 				pass
+		if currentlvl == 4:
+			if global.sstate >=6:
+				global.level = 4
+				Transition.change_scene("res://scenes/level4.tscn")
 	pass # Replace with function body.
 
 
 func _on_next_pressed():
-	if currentlvl == 3:
+	if currentlvl == 4:
 		currentlvl = 1
-		$levels/lvl.text = "ENTER LEVEL 1"
+		$levels/lvl.text = tr("label_lvl")+" 1"
+	elif currentlvl == 3:
+		currentlvl = 4
+		$levels/lvl.text = tr("label_lvl")+" 4"
 	elif currentlvl == 2:
 		currentlvl = 3
-		$levels/lvl.text = "ENTER LEVEL 3"
+		$levels/lvl.text = tr("label_lvl")+" 3"
 	elif currentlvl == 1:
 		currentlvl = 2
-		$levels/lvl.text = "ENTER LEVEL 2"
+		$levels/lvl.text = tr("label_lvl")+" 2"
 	$levels/levelicon.play(str(currentlvl))
 	pass # Replace with function body.
 
 
 func _on_prev_pressed():
-	if currentlvl == 3:
+	if currentlvl == 4:
+		currentlvl = 3
+		$levels/lvl.text = tr("label_lvl")+" 3"
+	elif currentlvl == 3:
 		currentlvl = 2
-		$levels/lvl.text = "ENTER LEVEL 2"
+		$levels/lvl.text = tr("label_lvl")+" 2"
 	elif currentlvl == 2:
-		$levels/lvl.text = "ENTER LEVEL 1"
+		$levels/lvl.text = tr("label_lvl")+" 1"
 		currentlvl = 1
 	elif currentlvl == 1:
-		$levels/lvl.text = "ENTER LEVEL 3"
-		currentlvl = 3
+		$levels/lvl.text = tr("label_lvl")+" 4"
+		currentlvl = 4
 	$levels/levelicon.play(str(currentlvl))
+	pass # Replace with function body.
+
+
+func _on_enter_pressed():
+	$levels/lvl.emit_signal("pressed")
 	pass # Replace with function body.

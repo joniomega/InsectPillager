@@ -1,0 +1,23 @@
+key,en,es
+PLAY,PLAY,JUGAR
+OPTIONS,OPTIONS,OPCIONES
+CONTINUE,CONTINUE,CONFIRMAR
+SWORD,SWORD,ESPAGA
+sword,sword,espada
+DAGGER,DAGGER,DAGA
+dagger,dagger,daga
+CROSSBOW,CROSSBOW,BALLESTA
+crossbow,crossbow,ballesta
++damage,+damage,+daño
+STRANGER,STRANGER,ESTRANJERO
+ENTER,PLAY,JUGAR
+ind_choose,Choose weapon and level,Elige arma y nivel
+label_lvl,ZONE,ZONA
+return_,return,volver
+label_potion,potions,pociones
+tounlock, TO UNLOCK, PARA DESBLOQUEAR
+tutorialtip1,MOVE WITH JOYSTICK,MUEVETE CON EL JOYSTICK
+tutorialtip2,COLLECT SHELLS (     ) TO INCREASE EXP,RECOLECTA CONCHAS (     ) PARA SUBIR DE NIVEL
+tutorialtip3,USE POTIONS TO HEAL UP,USA POCIONES PARA CURARTE
+tutorialtip4,REACH  5  MINUTES TO COMPLETE THE LEVEL,LLEGA  5 MIN PARA COMPLETAR EL NIVEL
+swipe,SWIPE,DESLIZA

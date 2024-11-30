@@ -13,6 +13,8 @@ onready var progressbar = get_node("scroll/progress")
 onready var shellicon = preload("res://assets/ui/shell_icon.png")
 
 func _ready():
+	$scroll/progress/rank1.text = "200" + tr("tounlock")
+	$scroll/progress/swipe.text = tr("swipe")
 	global = get_node("/root/global")
 	$shells/shells.text = str(global.shells)
 	_update_ranks()
@@ -49,7 +51,7 @@ func _update_ranks():
 		if (global.rank-1) == i and i < rank_nodes.size() - 1:
 			var next_rank_node = rank_nodes[i + 1]
 			var next_rank_button = next_rank_node["rank"]
-			next_rank_button.text = str(next_rank_node["unlock_cost"]) + " TO UNLOCK"
+			next_rank_button.text = str(next_rank_node["unlock_cost"]) + tr("tounlock")
 			next_rank_button.icon = shellicon
 
 	if global.rank < rank_nodes.size():

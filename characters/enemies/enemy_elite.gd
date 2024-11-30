@@ -22,7 +22,7 @@ func _ready():
 	global = get_node("/root/global")
 	#AUGMENTAR VIDA I DAÑO SEGUN EL TIEMPO:
 	if global.enemylvl >= 1:
-		vida = vida + (global.enemylvl * 4)
+		vida = vida + (global.enemylvl * 6)
 		damage = damage + (global.enemylvl * 2)
 	# Obtener el AnimatedSprite
 	animated_sprite = $AnimatedSprite

@@ -128,13 +128,13 @@ func reloadstats(stat):
 	if stat:
 		match stat:
 			"resistance":
-				resistance = global.plusresistance + resistance
+				resistance = global.plusresistance
 			"sharpness":
-				sharpness = global.plussharpness + sharpness
+				sharpness = global.plussharpness
 			"soulpower":
-				soulpower = global.plussoulpower + soulpower
+				soulpower = global.plussoulpower
 			"speed":
-				speed = global.plusspeed + speed
+				speed = global.plusspeed + 70
 	$UI/Control/stats/speed.text = str(speed)
 	$UI/Control/stats/resistance.text = str(resistance)
 	$UI/Control/stats/sharpness.text = str(sharpness)

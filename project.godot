@@ -148,7 +148,6 @@ config={
 config/name="Insect Pillager"
 run/main_scene="res://scenes/mainmenu.tscn"
 boot_splash/image="res://logo_final.png"
-boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://logo_final.png"
@@ -218,6 +217,10 @@ dialogic_default_action={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[locale]
+
+translations=PoolStringArray( "res://translations.en.translation", "res://translations.es.translation" )
 
 [physics]
 

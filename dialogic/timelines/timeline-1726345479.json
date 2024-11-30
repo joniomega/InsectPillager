@@ -98,7 +98,7 @@
 			"character": "character-1724250136.json",
 			"event_id": "dialogic_001",
 			"portrait": "Blink",
-			"text": "And that's how its done! Great Job!"
+			"text": "That's howk its donek!"
 		},
 		{
 			"animation": "[Default]",
@@ -164,7 +164,7 @@
 			"character": "character-1724098173.json",
 			"event_id": "dialogic_001",
 			"portrait": "shieldwarrior_portrait2",
-			"text": "Hmmm good work, my sister is really proud of you."
+			"text": "My sister seems proud of the work you are doing here."
 		},
 		{
 			"animation": "[Default]",
@@ -190,7 +190,7 @@
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
 			"portrait": "Ritual",
-			"text": "Work is really paying off. "
+			"text": "It is really paying off. "
 		},
 		{
 			"animation": "pulse.gd",
@@ -217,7 +217,7 @@
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
 			"portrait": "Smile",
-			"text": "Bugs from their capital are talking about you all the day."
+			"text": "All this bug blood may attract a repeater. "
 		},
 		{
 			"animation": "headshake.gd",

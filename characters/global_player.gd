@@ -49,6 +49,7 @@ var lvlaxerangbool = false
 var enemylvl = 1
 var enemimax = 80
 var enemitotal = 0
+var enemibigtotal = 0
 var exporbmax = 80
 var exporbtotal = 0
 

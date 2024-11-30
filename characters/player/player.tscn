@@ -2448,7 +2448,7 @@ texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 120, 19 )
 
 [sub_resource type="DynamicFont" id=686]
-size = 64
+size = 50
 outline_size = 3
 outline_color = Color( 0.121569, 0.117647, 0.176471, 1 )
 font_data = ExtResource( 6 )
@@ -2758,28 +2758,41 @@ percent_visible = false
 
 [node name="Label" type="Label" parent="UI"]
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 109.0
-margin_top = 10.5
-margin_right = 235.0
-margin_bottom = 93.5
+margin_left = 188.0
+margin_top = 17.0
+margin_right = 314.0
+margin_bottom = 100.0
 rect_scale = Vector2( 0.15, 0.15 )
 custom_colors/font_color = Color( 0.670588, 0.670588, 0.670588, 1 )
 custom_fonts/font = SubResource( 686 )
 text = "00:00"
-align = 1
+align = 2
 valign = 1
 
 [node name="Label2" type="Label" parent="UI"]
 modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 128.0
-margin_top = 10.5
-margin_right = 265.0
-margin_bottom = 93.5
+margin_left = 208.0
+margin_top = 17.0
+margin_right = 345.0
+margin_bottom = 100.0
 rect_scale = Vector2( 0.15, 0.15 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 686 )
 text = "/ 5:00"
-align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="UI"]
+visible = false
+modulate = Color( 1, 1, 1, 0.705882 )
+margin_left = 168.5
+margin_top = 17.0
+margin_right = 327.5
+margin_bottom = 100.0
+rect_scale = Vector2( 0.15, 0.15 )
+custom_colors/font_color = Color( 1, 0.956863, 0.478431, 1 )
+custom_fonts/font = SubResource( 686 )
+text = "-SURVIVE"
+align = 2
 valign = 1
 
 [node name="Timer" type="Timer" parent="UI"]

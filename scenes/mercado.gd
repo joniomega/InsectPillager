@@ -21,6 +21,10 @@ func _ready():
 	else:
 		$currentcamera/ambience.stream_paused = false
 		pass
+	if global.sstate == 0:
+		$back/Puppetpriest/IconTalk.visible = false
+		$back/shieldwarrior/IconTalk.visible = false
+		$back/Guard2/IconTalk.visible = false
 	pass
 
 func _process(delta):
