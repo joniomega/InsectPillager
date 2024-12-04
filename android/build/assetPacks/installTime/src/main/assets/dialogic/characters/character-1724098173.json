@@ -1,0 +1,29 @@
+{
+	"color": "#ffe6693e",
+	"description": "",
+	"display_name": "Meira Cajeon",
+	"display_name_bool": true,
+	"id": "character-1724098173.json",
+	"mirror_portraits": false,
+	"name": "shieldwarrior",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -100,
+	"offset_y": -200,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://characters/npc/shieldwarrior_portrait.png"
+		},
+		{
+			"name": "shieldwarrior_portrait2",
+			"path": "res://characters/npc/shieldwarrior_portrait2.png"
+		},
+		{
+			"name": "shieldwarrior_portrait3",
+			"path": "res://characters/npc/shieldwarrior_portrait3.png"
+		}
+	],
+	"scale": 800,
+	"theme": "theme-1724095911.cfg"
+}

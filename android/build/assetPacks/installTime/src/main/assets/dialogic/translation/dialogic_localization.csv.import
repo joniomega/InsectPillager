@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://dialogic/translation/dialogic_localization.es.translation", "res://dialogic/translation/dialogic_localization.en.translation" ]
+
+source_file="res://dialogic/translation/dialogic_localization.csv"
+dest_files=[ "res://dialogic/translation/dialogic_localization.es.translation", "res://dialogic/translation/dialogic_localization.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

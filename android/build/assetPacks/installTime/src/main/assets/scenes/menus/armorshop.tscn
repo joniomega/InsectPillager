@@ -1,0 +1,414 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://assets/Oseemono-V5Ez.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://characters/player/skins/Download72849.png" type="Texture" id=4]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/border.png" type="Texture" id=6]
+[ext_resource path="res://characters/player/skins/Download28410.png" type="Texture" id=7]
+[ext_resource path="res://characters/player/skins/Download17236.png" type="Texture" id=8]
+[ext_resource path="res://characters/npc/Download40094.png" type="Texture" id=9]
+[ext_resource path="res://assets/sounds/sound_button.mp3" type="AudioStream" id=10]
+
+[sub_resource type="GDScript" id=41]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var global
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	global = get_node(\"/root/global\")
+	if global:
+		global.toggle_pause()  # Pausing the game
+	else:
+		pass # Replace with function body.
+	if global.hasskin1 == true:
+		$armors/armor1/worth.visible = false
+		pass
+	if global.hasskin2 == true:
+		$armors/armor2/worth.visible = false
+		pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+#al clicar la aramadura 0 o mejor dicho la deafault se pone resta misma 
+func _on_armor0_pressed():
+	$buttonsound.play()
+	yield($buttonsound, \"finished\")
+	global.skin = \"0\"
+	global.toggle_pause()
+	queue_free()
+	pass # Replace with function body.
+
+#Al clicar la armadura 1 si tienes suficientes \"shells\" se pondra pero si no tienes suficientes no se pondra 
+func _on_armor1_pressed():
+	$buttonsound.play()
+	yield($buttonsound, \"finished\")
+	if global.hasskin1 == true:
+		global.skin = \"1\"
+		global.toggle_pause()
+		queue_free()
+	if global.hasskin1 == false:
+		if global.shells >= 200:
+			global.shells = global.shells - 200
+			global.hasskin1 = true
+			global.skin = \"1\"
+			global.toggle_pause()
+			queue_free()
+		else:
+			$armors/armor1.modulate = Color(2, 1, 1, 1)
+	else:
+		pass
+
+#Al clicar la armadura 2 si tienes suficientes \"shells\" se pondra pero si no tienes suficientes no se pondra 
+func _on_armor2_pressed():
+	$buttonsound.play()
+	yield($buttonsound, \"finished\")
+	if global.hasskin2 == true:
+		global.skin = \"2\"
+		global.toggle_pause()
+		queue_free()
+	if global.hasskin2 == false:
+		if global.shells >= 220:
+			global.shells = global.shells - 220
+			global.hasskin2 = true
+			global.skin = \"2\"
+			global.toggle_pause()
+			queue_free()
+		else:
+			$armors/armor2.modulate = Color(2, 1, 1, 1)
+	else:
+		pass
+
+#Este boton es para cerrar la ventana de las armaduras
+func _on_close_pressed():
+	$buttonsound.play()
+	yield($buttonsound, \"finished\")
+	global.toggle_pause()
+	queue_free()
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 9 )
+region = Rect2( 64, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 9 )
+region = Rect2( 128, 128, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 2.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 7 )
+region = Rect2( 192, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 256, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 320, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 384, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 448, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 7 )
+region = Rect2( 512, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 448, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 512, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 8 )
+region = Rect2( 64, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 8 )
+region = Rect2( 128, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 8 )
+region = Rect2( 192, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 8 )
+region = Rect2( 256, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 8 )
+region = Rect2( 320, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 8 )
+region = Rect2( 448, 640, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 8 )
+region = Rect2( 512, 640, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "armor0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "armor1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "armor2",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=40]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 25
+outline_size = 1
+outline_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=32]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=33]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=34]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=35]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="armorshop" type="Node2D"]
+pause_mode = 2
+position = Vector2( 0, 1 )
+scale = Vector2( 2, 2 )
+script = SubResource( 41 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -113.5
+margin_top = -56.0
+margin_right = 105.5
+margin_bottom = 54.0
+color = Color( 0.533333, 0.501961, 0.470588, 1 )
+
+[node name="Border" type="Sprite" parent="."]
+position = Vector2( -6.14499, -1.02499 )
+scale = Vector2( 1.77898, 1.92109 )
+texture = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 112, 38.5 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 39 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="armors" type="Control" parent="."]
+margin_left = -7.0
+margin_right = 33.0
+margin_bottom = 40.0
+
+[node name="armor0" type="Button" parent="armors"]
+margin_left = -96.0
+margin_top = 28.0
+margin_right = -34.0
+margin_bottom = 48.0
+custom_colors/font_color_hover = Color( 0.513726, 0.513726, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.211765, 0.211765, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "soldier armor"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="armors/armor0"]
+position = Vector2( 31, -35 )
+frames = SubResource( 30 )
+animation = "armor0"
+frame = 6
+playing = true
+
+[node name="armor1" type="Button" parent="armors"]
+margin_left = -31.0
+margin_top = 28.0
+margin_right = 31.0
+margin_bottom = 48.0
+custom_colors/font_color_hover = Color( 0.513726, 0.513726, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.211765, 0.211765, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "hooded armor"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="armors/armor1"]
+position = Vector2( 31, -35 )
+frames = SubResource( 30 )
+animation = "armor1"
+frame = 6
+playing = true
+
+[node name="worth" type="Label" parent="armors/armor1"]
+margin_left = 9.5
+margin_top = -8.5
+margin_right = 49.5
+margin_bottom = 5.5
+custom_fonts/font = SubResource( 40 )
+text = "200 $"
+align = 1
+
+[node name="armor2" type="Button" parent="armors"]
+margin_left = 34.0
+margin_top = 28.0
+margin_right = 96.0
+margin_bottom = 48.0
+custom_colors/font_color_hover = Color( 0.513726, 0.513726, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.211765, 0.211765, 0.211765, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "northern armor"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="armors/armor2"]
+position = Vector2( 31, -35 )
+frames = SubResource( 30 )
+animation = "armor2"
+frame = 6
+playing = true
+
+[node name="worth" type="Label" parent="armors/armor2"]
+margin_left = 9.5
+margin_top = -8.5
+margin_right = 49.5
+margin_bottom = 5.5
+custom_fonts/font = SubResource( 40 )
+text = "220 $"
+align = 1
+
+[node name="close" type="Button" parent="."]
+margin_left = -108.0
+margin_top = -63.0
+margin_right = -82.0
+margin_bottom = -27.0
+custom_colors/font_color = Color( 0.619608, 0, 0, 1 )
+custom_fonts/font = SubResource( 31 )
+custom_styles/hover = SubResource( 32 )
+custom_styles/pressed = SubResource( 33 )
+custom_styles/focus = SubResource( 34 )
+custom_styles/normal = SubResource( 35 )
+text = "X"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+bus = "Effects"
+
+[connection signal="pressed" from="armors/armor0" to="." method="_on_armor0_pressed"]
+[connection signal="pressed" from="armors/armor1" to="." method="_on_armor1_pressed"]
+[connection signal="pressed" from="armors/armor2" to="." method="_on_armor2_pressed"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
