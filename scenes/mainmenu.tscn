@@ -1709,7 +1709,7 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 137, 306 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Shadow" type="Sprite" parent="Menu/Node2D/AnimatedSprite"]
@@ -1722,7 +1722,6 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 65, 435 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 2
 playing = true
 
 [node name="Shadow2" type="Sprite" parent="Menu/Node2D/AnimatedSprite2"]
@@ -1735,7 +1734,7 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 958, 346 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 3
+frame = 1
 playing = true
 flip_h = true
 
@@ -1873,7 +1872,7 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 211.5, 541.88 )
 scale = Vector2( 5.64063, 5.09 )
 frames = SubResource( 180 )
-frame = 2
+frame = 3
 playing = true
 
 [connection signal="pressed" from="Menu/play" to="." method="_on_play_pressed"]
