@@ -16,6 +16,8 @@ func _ready():
 	$title.text = tr("ind_choose")
 	$continue.text = tr("return_")
 	global = get_node("/root/global")
+	if global.sstate <=2:
+		$levels/arrow.visible = true
 	if global.sstate <=3:
 		lvl1locked = false
 		lvl2locked = true

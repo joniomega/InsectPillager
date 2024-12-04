@@ -21,3 +21,29 @@ tutorialtip2,COLLECT SHELLS (     ) TO INCREASE EXP,RECOLECTA CONCHAS (     ) PA
 tutorialtip3,USE POTIONS TO HEAL UP,USA POCIONES PARA CURARTE
 tutorialtip4,REACH  5  MINUTES TO COMPLETE THE LEVEL,LLEGA  5 MIN PARA COMPLETAR EL NIVEL
 swipe,SWIPE,DESLIZA
+ind_customize,Customize your character,Personaliza tu personaje
+bubble,bubble,burbuja
+scythe,scythe,hoz
+cristal,cristal,cristal
+axerang,axerang,acharang
+chossewp,CHOSSE WEAPON,ELIGE ARMA
+TAKE,TAKE,RECOGER
+SELL,SELL,VENDER
+objgreenshell ring,greenshell ring,anillo conchaverde
+objdouble plate ring,double plate ring,doble anillo plateado
+objbook of horrors,book of horrors,libro de los horrores
+objbluecristal collar,bluecristal collar,collar azulado
+objancient bug knife,ancient bug knife,cuchillo antiguo
+objbeak totem,beak totem,totem picudo
+objverdant shield,verdant shield,escudo verdoso
+resistance,resistance,resistencia
+sharpness,sharpness,filo del arma
+soulpower,soulpower,poder almico
+speed,speed,velocidad
+desc_greenshell_ring,"Boosts your resistance,\nwithstands enemy hits.",Mejora tu resistencia i\n tu aguante.
+desc_double_plate_ring,Used by warriors\nfrom the west isles.,Usado por guerreros\nde las islas del oeste.
+desc_book_of_horrors,"Dark secrets revealed,\npower for spells.","Secretos oscuros revelados,\nmas poder almico."
+desc_bluecristal_collar,Increases speed and\nagility in battle.,Augmenta tu velocidad i\nagilidad en combate.
+desc_ancient_bug_knife,A knife possibly used\nin acient rituals.,Un cuchillo probablemente\nusado en rituales.
+desc_beak_totem,Mystical figure with a\nsteel beak and a gem.,Figura mistica con un\npico i una gema.
+desc_verdant_shield,A green shield showing\ncourage and liveliness.,Un escudo demostrando\ncorage y vida.

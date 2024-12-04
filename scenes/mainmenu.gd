@@ -6,11 +6,22 @@ var global
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var spanish_locales = [
+		"es", "es_AR", "es_BO", "es_CL", "es_CO", "es_CR", "es_CU", "es_DO",
+		"es_EC", "es_SV", "es_GT", "es_HN", "es_MX", "es_NI", "es_PA",
+		"es_PY", "es_PE", "es_PR", "es_ES", "es_UY", "es_VE"
+	]
+var catalan_locales = ["ca", "ca_ES"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/global")
+	
+	#SET LOCAL TO ES IF ITS A SPANISH COUNTRY
+	var system_language = OS.get_locale()
+	if system_language in spanish_locales or system_language in catalan_locales:
+		TranslationServer.set_locale("es")  # Use Spanish
+	
 	pass # Replace with function body.
 
 
@@ -72,4 +83,15 @@ func _on_Volver_al_menu_pressed():
 func _on_Button_pressed():
 #	global.sstate = 1
 #	get_tree().change_scene("res://scenes/mercado.tscn")
+	pass # Replace with function body.
+
+
+func _on_es_pressed():
+	TranslationServer.set_locale("es")  # Use Spanish
+	pass # Replace with function body.
+
+
+func _on_en_pressed():
+	TranslationServer.set_locale("en")  # Use Spanish
+	
 	pass # Replace with function body.

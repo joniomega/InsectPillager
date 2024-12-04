@@ -23,10 +23,11 @@
 			"volume": -5
 		},
 		{
-			"character": "",
+			"character": "character-1733006991.json",
 			"event_id": "dialogic_001",
+			"localization_id": "START_TEXT_3_0",
 			"portrait": "",
-			"text": "You feel every part of you come to life... "
+			"text": "[wave]You feel every part of you come to life... "
 		},
 		{
 			"animation": "[Default]",
@@ -72,6 +73,7 @@
 		{
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
+			"localization_id": "START_TEXT_6_1",
 			"portrait": "Ritual",
 			"text": "I summon you, puppet!!!"
 		},
@@ -116,12 +118,14 @@
 		{
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
+			"localization_id": "START_TEXT_10_2",
 			"portrait": "Smile",
 			"text": "Greetings puppet I am your summoner. Ilyana Caijeon!!!"
 		},
 		{
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
+			"localization_id": "START_TEXT_11_3",
 			"portrait": "Default",
 			"text": "This are the caverns and you have been tasked to defeat lots of bugs here."
 		},
@@ -149,6 +153,7 @@
 		{
 			"character": "character-1724095471.json",
 			"event_id": "dialogic_001",
+			"localization_id": "START_TEXT_13_4",
 			"portrait": "Smile",
 			"text": "Enter through that door to start your first run at the caverns."
 		},

@@ -20,6 +20,7 @@ var cristal_scene = preload("res://characters/player/items/item_cristal.tscn")
 var axerang_scene = preload("res://characters/player/items/item_axerang.tscn")
 
 func _ready():
+	$Label.text = tr("chossewp")
 	global = get_node("/root/global")
 	if global:
 		global.toggle_pause()  # Pausing the game

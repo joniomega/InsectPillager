@@ -169,6 +169,13 @@ enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/virtu
 
 common/drop_mouse_on_gui_input_disabled=true
 
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
+
 [input]
 
 ui_left={
@@ -220,7 +227,8 @@ pointing/emulate_touch_from_mouse=true
 
 [locale]
 
-translations=PoolStringArray( "res://translations.en.translation", "res://translations.es.translation" )
+translations=PoolStringArray( "res://translations.en.translation", "res://translations.es.translation", "res://dialogic/translation/dialogic_localization.es.translation", "res://dialogic/translation/dialogic_localization.en.translation" )
+locale_filter=[ 0, [  ] ]
 
 [physics]
 

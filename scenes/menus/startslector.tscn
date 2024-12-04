@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
@@ -365,6 +365,26 @@ outline_size = 1
 outline_color = Color( 0.152941, 0.152941, 0.152941, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="AtlasTexture" id=210]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 15, 22 )
+
+[sub_resource type="AtlasTexture" id=211]
+atlas = ExtResource( 8 )
+region = Rect2( 15, 0, 15, 22 )
+
+[sub_resource type="AtlasTexture" id=212]
+atlas = ExtResource( 8 )
+region = Rect2( 30, 0, 15, 22 )
+
+[sub_resource type="SpriteFrames" id=213]
+animations = [ {
+"frames": [ SubResource( 210 ), SubResource( 211 ), SubResource( 212 ), SubResource( 211 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [sub_resource type="DynamicFont" id=19]
 size = 64
 outline_size = 4
@@ -459,7 +479,7 @@ position = Vector2( 352, 37 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="dagger_button" type="Button" parent="."]
@@ -487,6 +507,7 @@ position = Vector2( 362, 37 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
+frame = 3
 playing = true
 
 [node name="crossbow_button" type="Button" parent="."]
@@ -514,7 +535,6 @@ position = Vector2( 364, 40 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
-frame = 2
 playing = true
 
 [node name="levels" type="Node2D" parent="."]
@@ -583,6 +603,16 @@ custom_styles/focus = SubResource( 47 )
 custom_styles/normal = SubResource( 48 )
 icon = ExtResource( 11 )
 expand_icon = true
+
+[node name="arrow" type="AnimatedSprite" parent="levels"]
+visible = false
+position = Vector2( -176, 150 )
+rotation = 1.5708
+scale = Vector2( 6.87053, 6.5691 )
+frames = SubResource( 213 )
+frame = 2
+playing = true
+flip_h = true
 
 [node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 247, 147 )

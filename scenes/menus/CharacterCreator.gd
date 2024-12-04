@@ -37,7 +37,9 @@ var unlocked_bodies = []
 var unlocked_legs = []
 
 func _ready():
+	
 	$control/title.text = teanglish
+	$control/title.text = tr("ind_customize")
 	global = get_node("/root/global")
 
 	# Load global state for skins

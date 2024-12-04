@@ -1,0 +1,76 @@
+id,es,en
+START_TEXT_3_0,[wave]Sientes como tu cuerpo y tu mente entran en vida…,[wave]You feel every part of you come to life…
+START_TEXT_6_1,"¡Te invoco, títere!","I summon you, puppet!!!"
+START_TEXT_10_2,"Saludos, títere. Soy tu invocadora, ¡Ilyana Caijeon!",Greetings puppet I am your summoner. Ilyana Caijeon!!!
+START_TEXT_11_3,"Estas son las cavernas, y se te ha encomendado derrotar a muchos insectos aquí.",These are the caverns and you have been tasked to defeat lots of bugs here.
+START_TEXT_13_4,Entra por esa puerta para comenzar tu primera incursión en las cavernas.,Enter through that door to start your first run at the caverns.
+GUARDS_TEXT_5_0,"Hmm hola, títere...",Hmmm hello puppet...
+GUARDS_QUESTION_7_1,¿Necesitas algo?,Need anythingK?
+GUARDS_CHOICE_8_2,- Háblame del puesto avanzado,- Tell me about the outpost
+GUARDS_TEXT_9_3,"Bueno, es solo un puesto avanzado con una entrada a las cavernas.","Well, it's just an outpostK with an entrance to the cavernsK."
+GUARDS_TEXT_11_4,"Donde residen nuestros enemigos,","Where our enemies reside,"
+GUARDS_TEXT_13_5,Entraré de nuevo a alimentarme tan pronto como me recupere.,I will go in again to feast as soon as I recover.
+GUARDS_TEXT_15_6,Estoy seguro de que lo harás.,I'mK sure you willK.
+GUARDS_CHOICE_16_7,- Háblame de las cavernas,- Tell me about the caverns
+GUARDS_TEXT_17_8,Las cavernas son el hogar de los insectos del Enjambre.,The cavernsK are the home of bugs from the SwarmK.
+GUARDS_TEXT_19_9,Recolectamos sus preciosas conchas y partes y las usamos para alimentarnos...,We collect their very very precious shells and parts and feed them to ourselves...
+GUARDS_TEXT_21_10,o para alimentar al NIDO MADRE.,or to MOTHER NEST.
+GUARDS_TEXT_23_11,"Sí, así es como funciona.",Yeah soK that's how it isK.
+GUARDS_CHOICE_24_12,- ¿Qué eres?,- What are you?
+GUARDS_TEXT_25_13,¿Qué quieres decir?,What do you meanK?
+GUARDS_TEXT_27_14,"Bueno, somos hijos del NIDO MADRE.",Well we are children of MOTHER NEST.
+GUARDS_TEXT_29_15,"Sí, y los insectos dentro de las cavernas son nuestros enemigos naturales.","Yes, and the bugs inside the caverns are our natural enemies."
+GUARDS_TEXT_31_16,Usualmente somos amistosos con otros...,We are usually friendly to others...
+SHIELD1_TEXT_4_0,¿Por qué mi hermana aceptó esa tarea...?,Why did my sister accept that task...
+SHIELD1_QUESTION_6_1,"¿Qué quieres, títere?",What do you want puppet?
+SHIELD1_CHOICE_7_2,- ¿La sacerdotisa de títeres es tu hermana?,- Is the puppetpriest your sister?
+SHIELD1_TEXT_8_3,Su nombre es Ilyana Cajeon,Her name is Ilyana Cajeon
+SHIELD1_TEXT_9_4,"y sí, soy su hermana, Meira Cajeon.","and yes I am her sister, Meira Cajeon."
+SHIELD1_TEXT_11_5,"Solo para que lo sepas, estoy aquí para protegerla",Just so you know I am here to protect her
+SHIELD1_TEXT_13_6,"del Enjambre, pero también de ti.",From the Swarm but also from you.
+SHIELD1_TEXT_15_7,Sé lo peligrosos que pueden ser los títeres.,I know how dangerous puppets are.
+SHIELD1_CHOICE_16_8,- ¿Qué es un títere?,- What is a puppet?
+SHIELD1_TEXT_18_9,"Un títere es lo que eres, duh.",A puppet is what you are duh.
+SHIELD1_TEXT_20_10,Básicamente eres como una armadura viviente.,"Well, you are basically like a living armor."
+SHIELD1_TEXT_21_11,Una entidad peligrosa y traicionera ligada a unas ropas.,A dangerous and backstabbing entity bond to some clothes.
+SHIELD1_TEXT_23_12,Y te eliminaré si es necesario.,And I'll put you down if I need to.
+SHIELD1_TEXT_25_13,Así que no causes problemas.,So don't cause any trouble.
+SHIELD1_CHOICE_26_14,- Nada,- Nothing
+SHIELD1_TEXT_28_15,"Huh, entonces deja de molestarme.",Huh so stop annoying me.
+SHIELD1_TEXT_30_16,Solo entra en las cavernas y mata algunos insectos.,Just go into the caverns and kill some bugs.
+PPRIEST_TEXT_4_0,"¡Saludos, títere!",Greetings puppet!
+PPRIEST_QUESTION_6_1,¿Tienes alguna pregunta para tu invocadora?,Do you have any questions for your summoner?
+PPRIEST_CHOICE_7_2,- ¿Cómo aprendiste a invocar?,- How did you learn to summon?
+PPRIEST_TEXT_8_3,"Bueno, cuando era joven me uní al gremio de sacerdotes de títeres.","Well, when I was young I joined the puppetpriests guild."
+PPRIEST_TEXT_10_4,Allí aprendí a controlar y manifestar la esencia dentro de mí.,There I learned to control and manifest the essence within me.
+PPRIEST_TEXT_11_5,Y con años de entrenamiento y aprendizaje...,And with more years of training and learning...
+PPRIEST_TEXT_12_6,Aprendí a invocar un títere o Vírhal sálëth como decimos.,I learned how to summon a puppet or Vírhal sálëth as we say.
+PPRIEST_TEXT_14_7,"Y como sabes, eso es lo que eres.",And as you know that's what you are.
+PPRIEST_CHOICE_15_8,- ¿Cuál es mi tarea?,- What is my task?
+PPRIEST_TEXT_17_9,Tu tarea es ganar esencia.,Your task is to gain essence.
+PPRIEST_TEXT_18_10,La obtienes liberando a los insectos en las cavernas.,You gain it by freeing the bugs at the caverns.
+PPRIEST_TEXT_20_11,Puedes entrar a las cavernas por la gran puerta a tu izquierda.,You can enter the caverns through the big door on your left.
+EXAMPLEE_TEXT_1_0,holaaaa,helloooo
+WIN1_TEXT_4_0,"Wow, esa carnicería fue impresionante.",Wow that carnage was awesome.
+WIN1_TEXT_6_1,Es verdad.,That's true.
+WIN1_TEXT_8_2,"Además, algunos insectos están empezando a llamarte el SAQUEADOR.",Also some bugs are starting to call you the PILLAGER.
+WIN1_TEXT_10_3,Esta fama seguramente nos beneficiará.,This fame will surely benefit us.
+WIN1_TEXT_13_4,Veo que a veces puedes ser útil.,I see you can be useful sometimes.
+WIN1_TEXT_15_5,Pero tendrás que matar más insectos para mantener esa fama.,But you will have to kill more bugs to keep that fame up.
+WIN2_TEXT_3_0,¡Estás mejorando en esto!,You are getting better at this!
+WIN2_TEXT_5_1,"Con cada insecto que aplastas, tu fama crece.",With every bug you crush your fame grows.
+WIN2_TEXT_7_2,Y eso es para lo que estamos aquí.,And that is what we are here for.
+WIN2_TEXT_8_3,¡Buen trabajo!,Good job!
+WIN2_TEXT_11_4,Pero no dejes que se te suba a la cabeza.,But don’t let it go to your head.
+WIN2_TEXT_13_5,Necesitarás esa fama para seguir subiendo.,You will need that fame to keep going up.
+WIN2_TEXT_15_6,"Pero buen trabajo, supongo...",But good job I guess...
+WIN3_TEXT_4_0,...,...
+WIN3_TEXT_6_1,Me encanta ese olor a sangre de insecto...,I love that smell of bug blood...
+WIN3_TEXT_8_2,¡Así es como se hace!,That's howk it's donek!
+WIN3_TEXT_12_3,Mi hermana parece orgullosa del trabajo que estás haciendo aquí.,My sister seems proud of the work you are doing here.
+WIN3_TEXT_14_4,Realmente está valiendo la pena.,It is really paying off.
+WIN3_TEXT_16_5,Toda esta sangre de insectos puede atraer a un repetidor.,All this bug blood may attract a repeater.
+WIN3_TEXT_18_6,Sigue cubriendo las cavernas con cadáveres de insectos y estaremos bien.,Keep covering the caverns with bug corpses and we will be good.
+WIN4_TEXT_4_0,Algo grande se acerca...,Something big is coming...
+WIN4_TEXT_7_1,"Eso es, hemos atraído a un repetidor. Tendrás que enfrentarlo.",That's it we have attracted a repeater. You will have to fight it.
+WIN4_TEXT_9_2,"Por favor, gana la pelea y habremos cumplido nuestro objetivo.",Please win the fight and we will have accomplished our objective.

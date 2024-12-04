@@ -20,14 +20,15 @@ var objfinal
 
 # Define the stat effects, colors, and descriptions for each object
 var object_stats = {
-	"greenshell ring": {"stat": "resistance", "value": 4, "description": "Boosts your resistance,\nwithstands enemy hits."},
-	"double plate ring": {"stat": "sharpness", "value": 4, "description": "Used by warriors\nfrom the west isles."},
-	"book of horrors": {"stat": "soulpower", "value": 4, "description": "Dark secrets revealed,\npower for spells."},
-	"bluecristal collar": {"stat": "speed", "value": 7, "description": "Increases speed and\nagility in battle."},
-	"ancient bug knife": {"stat": "sharpness", "value": 6, "description": "A knife possibly used\nin acient rituals."},
-	"beak totem": {"stat": "speed", "value": 10, "description": "Mystical figure with a\nsteel beak and a gem."},
-	"verdant shield": {"stat": "resistance", "value": 6, "description": "A green shield showing\ncourage and liveliness."}
+	"greenshell ring": {"stat": "resistance", "value": 4, "description_key": "desc_greenshell_ring"},
+	"double plate ring": {"stat": "sharpness", "value": 4, "description_key": "desc_double_plate_ring"},
+	"book of horrors": {"stat": "soulpower", "value": 4, "description_key": "desc_book_of_horrors"},
+	"bluecristal collar": {"stat": "speed", "value": 7, "description_key": "desc_bluecristal_collar"},
+	"ancient bug knife": {"stat": "sharpness", "value": 6, "description_key": "desc_ancient_bug_knife"},
+	"beak totem": {"stat": "speed", "value": 10, "description_key": "desc_beak_totem"},
+	"verdant shield": {"stat": "resistance", "value": 6, "description_key": "desc_verdant_shield"}
 }
+
 # Define colors for each stat type
 var stat_colors = {
 	"resistance": Color(0, 0.7, 0),  # Green
@@ -58,14 +59,15 @@ func generateobj():
 	# Update UI elements with the object name and icon
 	icon.play(objfinal)
 	label_title.text = objfinal
-	
+	label_title.text = tr("obj"+str(objfinal))
 	# Apply the stat change and color based on the selected object
 	var selected_stat = object_stats[objfinal]
 	if selected_stat:
-		statlabel.text = "+" + str(selected_stat["value"]) + " " + selected_stat["stat"]
+		statlabel.text = "+" + str(selected_stat["value"]) + " " + tr(selected_stat["stat"])
 		staticon.play(selected_stat["stat"])  # Assumes you have icons for each stat
 		statlabel.add_color_override("font_color", stat_colors[selected_stat["stat"]])  # Set font color
-		label_description.text = selected_stat["description"]  # Set item description
+		label_description.text = tr(selected_stat["description_key"])  # Usa la clave para traducir la descripción
+	
 
 func _on_Area2D_body_entered(body):
 	

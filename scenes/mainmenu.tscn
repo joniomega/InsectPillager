@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://scenes/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://characters/npc/puppetpriest.png" type="Texture" id=2]
@@ -14,12 +14,13 @@
 [ext_resource path="res://characters/player/skins/Download28410.png" type="Texture" id=12]
 [ext_resource path="res://characters/enemies/BeetleMove.png" type="Texture" id=13]
 [ext_resource path="res://assets/shadow.png" type="Texture" id=14]
-[ext_resource path="res://icon2.png" type="Texture" id=15]
 [ext_resource path="res://characters/npc/Download40094.png" type="Texture" id=16]
 [ext_resource path="res://assets/ui/button1.png" type="Texture" id=17]
 [ext_resource path="res://logo.png" type="Texture" id=18]
 [ext_resource path="res://icon.png" type="Texture" id=19]
 [ext_resource path="res://assets/FLORLRG_2.otf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/ui/button_circular1.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/button_circular2.png" type="Texture" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -1385,6 +1386,29 @@ texture = ExtResource( 17 )
 region_rect = Rect2( 0, 0, 30, 14 )
 modulate_color = Color( 0.701961, 0.701961, 0.701961, 1 )
 
+[sub_resource type="DynamicFont" id=182]
+size = 40
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 20 )
+
+[sub_resource type="StyleBoxTexture" id=187]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=183]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 16, 16 )
+modulate_color = Color( 1.5, 1.5, 1.5, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=184]
+
+[sub_resource type="StyleBoxEmpty" id=185]
+
+[sub_resource type="StyleBoxTexture" id=186]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
 [sub_resource type="DynamicFont" id=181]
 size = 50
 outline_size = 8
@@ -1590,10 +1614,10 @@ margin_right = 1018.0
 margin_bottom = 604.0
 
 [node name="play" type="Button" parent="Menu"]
-margin_left = 306.0
-margin_top = 272.0
-margin_right = 712.0
-margin_bottom = 417.0
+margin_left = 307.0
+margin_top = 273.0
+margin_right = 713.0
+margin_bottom = 418.0
 custom_colors/font_color = Color( 0.866667, 1, 0.67451, 1 )
 custom_fonts/font = SubResource( 27 )
 custom_styles/hover = SubResource( 28 )
@@ -1602,6 +1626,32 @@ custom_styles/focus = SubResource( 73 )
 custom_styles/disabled = SubResource( 31 )
 custom_styles/normal = SubResource( 32 )
 text = "PLAY"
+
+[node name="es" type="Button" parent="Menu"]
+margin_left = 808.0
+margin_top = 16.0
+margin_right = 914.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 182 )
+custom_styles/hover = SubResource( 187 )
+custom_styles/pressed = SubResource( 183 )
+custom_styles/focus = SubResource( 184 )
+custom_styles/disabled = SubResource( 185 )
+custom_styles/normal = SubResource( 186 )
+text = "ES"
+
+[node name="en" type="Button" parent="Menu"]
+margin_left = 912.0
+margin_top = 16.0
+margin_right = 1018.0
+margin_bottom = 106.0
+custom_fonts/font = SubResource( 182 )
+custom_styles/hover = SubResource( 187 )
+custom_styles/pressed = SubResource( 183 )
+custom_styles/focus = SubResource( 184 )
+custom_styles/disabled = SubResource( 185 )
+custom_styles/normal = SubResource( 186 )
+text = "EN"
 
 [node name="options" type="Button" parent="Menu"]
 margin_left = 336.0
@@ -1663,8 +1713,8 @@ frame = 1
 playing = true
 
 [node name="Shadow" type="Sprite" parent="Menu/Node2D/AnimatedSprite"]
-position = Vector2( 0.827692, 12.9251 )
-scale = Vector2( 0.578819, 0.50638 )
+position = Vector2( -0.945754, 13.8437 )
+scale = Vector2( 0.689659, 0.346888 )
 texture = ExtResource( 14 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Menu/Node2D"]
@@ -1690,14 +1740,16 @@ playing = true
 flip_h = true
 
 [node name="Shadow" type="Sprite" parent="Menu/Node2D/AnimatedSprite3"]
-position = Vector2( -0.420353, 11.4322 )
+modulate = Color( 0.784314, 0.784314, 0.784314, 1 )
+position = Vector2( -0.420349, 14.4944 )
 scale = Vector2( 0.60509, 0.442584 )
 texture = ExtResource( 14 )
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Menu/Node2D"]
-position = Vector2( 1231, 565 )
+position = Vector2( 1313, 542 )
 scale = Vector2( 3.90625, 4.10547 )
 frames = SubResource( 66 )
+frame = 1
 playing = true
 
 [node name="Opciones" type="Control" parent="."]
@@ -1770,7 +1822,7 @@ size_flags_horizontal = 3
 [node name="Master" type="HSlider" parent="Opciones/HBoxContainer/Slider"]
 margin_right = 249.0
 margin_bottom = 38.0
-custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 19 )
 custom_icons/grabber = ExtResource( 19 )
 custom_styles/slider = SubResource( 45 )
 custom_styles/grabber_area_highlight = SubResource( 46 )
@@ -1782,7 +1834,7 @@ max_value = 10.0
 margin_top = 42.0
 margin_right = 249.0
 margin_bottom = 80.0
-custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 19 )
 custom_icons/grabber = ExtResource( 19 )
 custom_styles/slider = SubResource( 49 )
 custom_styles/grabber_area_highlight = SubResource( 50 )
@@ -1794,7 +1846,7 @@ max_value = 10.0
 margin_top = 84.0
 margin_right = 249.0
 margin_bottom = 122.0
-custom_icons/grabber_highlight = ExtResource( 15 )
+custom_icons/grabber_highlight = ExtResource( 19 )
 custom_icons/grabber = ExtResource( 19 )
 custom_styles/slider = SubResource( 52 )
 custom_styles/grabber_area_highlight = SubResource( 53 )
@@ -1813,7 +1865,7 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 816, 539 )
 scale = Vector2( 6.0829, 5.70486 )
 frames = SubResource( 72 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Puppetpriest" type="AnimatedSprite" parent="."]
@@ -1821,10 +1873,12 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 211.5, 541.88 )
 scale = Vector2( 5.64063, 5.09 )
 frames = SubResource( 180 )
-frame = 3
+frame = 2
 playing = true
 
 [connection signal="pressed" from="Menu/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/es" to="." method="_on_es_pressed"]
+[connection signal="pressed" from="Menu/en" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="Menu/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Opciones/Volver_al_menu" to="." method="_on_Volver_al_menu_pressed"]
