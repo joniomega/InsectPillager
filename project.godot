@@ -68,6 +68,11 @@ _global_script_classes=[ {
 "class": "HistoryRow",
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
+}, {
+"base": "Object",
+"class": "PoingAdMobVersionHelper",
+"language": "GDScript",
+"path": "res://addons/admob/version_helper.gd"
 } ]
 _global_script_class_icons={
 "AdMob": "res://admob-lib/icon.png",
@@ -81,7 +86,8 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
-"HistoryRow": ""
+"HistoryRow": "",
+"PoingAdMobVersionHelper": ""
 }
 
 [admob]
@@ -94,7 +100,7 @@ config={
 "size": "BANNER",
 "unit_ids": {
 "Android": {
-"standard": "ca-app-pub-3940256099942544/6300978111"
+"standard": "ca-app-pub-8306120320708452~5849781022"
 },
 "iOS": {
 "standard": "ca-app-pub-3940256099942544/2934735716"
@@ -104,7 +110,7 @@ config={
 "debug": {
 "is_debug_on_release": false,
 "is_real": true,
-"is_test_europe_user_consent": false
+"is_test_europe_user_consent": true
 },
 "general": {
 "is_enabled": true,
@@ -114,7 +120,7 @@ config={
 "interstitial": {
 "unit_ids": {
 "Android": {
-"standard": "ca-app-pub-3940256099942544/1033173712"
+"standard": "ca-app-pub-8306120320708452~5849781022"
 },
 "iOS": {
 "standard": "ca-app-pub-3940256099942544/4411468910"
@@ -124,7 +130,7 @@ config={
 "rewarded": {
 "unit_ids": {
 "Android": {
-"standard": "ca-app-pub-3940256099942544/5224354917"
+"standard": "ca-app-pub-8306120320708452/4773337229"
 },
 "iOS": {
 "standard": "ca-app-pub-3940256099942544/1712485313"
@@ -156,6 +162,7 @@ config/icon="res://logo_final.png"
 
 Transition="*res://scenes/menus/transition.tscn"
 global="*res://characters/global.tscn"
+MobileAds="*res://addons/admob/src/singletons/MobileAds.gd"
 
 [display]
 
@@ -163,7 +170,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/admob/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/virtual_joystick/plugin.cfg" )
 
 [gui]
 

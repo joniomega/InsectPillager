@@ -72,3 +72,13 @@ func _on_talkppriest_pressed():
 	var start = Dialogic.start("ppriest")
 	add_child(start)
 	pass # Replace with function body.
+
+
+func _on_backtomenu_pressed():
+	Transition.change_scene("res://scenes/mainmenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_showplusmenu_pressed():
+	OS.shell_open("https://www.youtube.com/@joniomega4")
+	pass # Replace with function body.

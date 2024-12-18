@@ -1709,7 +1709,7 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 137, 306 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Shadow" type="Sprite" parent="Menu/Node2D/AnimatedSprite"]
@@ -1722,6 +1722,7 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 65, 435 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
+frame = 2
 playing = true
 
 [node name="Shadow2" type="Sprite" parent="Menu/Node2D/AnimatedSprite2"]
@@ -1734,7 +1735,7 @@ modulate = Color( 1, 1, 1, 0.572549 )
 position = Vector2( 958, 346 )
 scale = Vector2( 4.75781, 4.89844 )
 frames = SubResource( 61 )
-frame = 1
+frame = 3
 playing = true
 flip_h = true
 
@@ -1748,7 +1749,6 @@ texture = ExtResource( 14 )
 position = Vector2( 1313, 542 )
 scale = Vector2( 3.90625, 4.10547 )
 frames = SubResource( 66 )
-frame = 1
 playing = true
 
 [node name="Opciones" type="Control" parent="."]
@@ -1864,7 +1864,6 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 816, 539 )
 scale = Vector2( 6.0829, 5.70486 )
 frames = SubResource( 72 )
-frame = 1
 playing = true
 
 [node name="Puppetpriest" type="AnimatedSprite" parent="."]

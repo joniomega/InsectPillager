@@ -16,7 +16,7 @@
 [ext_resource path="res://scenes/menus/reputationshop.gd" type="Script" id=14]
 [ext_resource path="res://assets/ui/border.png" type="Texture" id=15]
 [ext_resource path="res://characters/player/clothes/hoodedmask.png" type="Texture" id=16]
-[ext_resource path="res://assets/ui/icon_ad.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/icon_plus.png" type="Texture" id=17]
 [ext_resource path="res://assets/ui/button3.png" type="Texture" id=18]
 [ext_resource path="res://characters/player/clothes/wintervest.png" type="Texture" id=19]
 [ext_resource path="res://characters/player/clothes/hornethelmet.png" type="Texture" id=20]
@@ -982,7 +982,7 @@ modulate = Color( 0.882353, 0.882353, 0.882353, 0.956863 )
 position = Vector2( 108, 484 )
 scale = Vector2( 6.65891, 6.49458 )
 frames = SubResource( 6 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="continue" type="Button" parent="."]

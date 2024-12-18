@@ -1,14 +1,18 @@
-extends Node2D
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var global
+extends CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	self.z_index = 20
+var global
+onready var admob = $AdMob
+
+func _ready()->void:
+
 	global = get_node("/root/global")
-	if global.minute >=5:
+	#ADMOB CONNECTS
+	admob.connect("rewarded_video_loaded",self,"rewardedad_loaded")
+	admob.connect("rewarded",self,"rewardad_finished")
+	admob.connect("rewarded_video_failed_to_load",self,"rewardad_failed")
+	admob.connect("rewarded_video_closed",self,"rewardad_closed")
+	admob.connect("rewarded_video_opened",self,"rewardad_opened")
+	if global.minute >= 5:
 		if global.level == 1:
 			global.sstate = 4
 			var start = Dialogic.start("win1")
@@ -26,30 +30,60 @@ func _ready():
 			var start = Dialogic.start("win4")
 			add_child(start)
 	global.save_game()
-	#RELLENAR ELS LABELS SCORE I SHELLS
+	check_internet_connection()
+	# Update labels
 	$Control/scoretitle/score.text = str(global.score)
 	$Control/scoretitle2/shells.text = str(global.shells)
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-#sale del menu de game over
-func _on_exit_pressed():
+func _on_exit_pressed()->void:
 	$buttonsound.play()
 	yield($buttonsound, "finished")
 	global.reset_weapons_and_enemies()
 	global.toggle_pause()
 	get_tree().change_scene("res://scenes/mercado.tscn")
-	#Transition.change_scene("res://scenes/mercado.tscn")
-	pass # Replace with function body.
 
+func _on_revive_pressed()->void:
+	admob.load_rewarded_video()
+	$Label.text = "loading ad..."
+	pass
 
-func _on_revive_pressed():
+func rewardedad_loaded()->void:
+	$Label.text = "ad fully loaded"
+	admob.show_rewarded_video()
+	_revive_player() 
+	pass
+
+func rewardad_finished(currency : String, amount : int)->void:
+	$Label.text = "ad finished"
+	_revive_player()
+
+func rewardad_failed():
+	$Label.text = "ad failed to load"
+	pass
+func rewardad_closed():
+	$Label.text = "ad closed"
+	pass
+func rewardad_opened():
+	$Label.text = "ad opened"
+	pass
+
+func _revive_player()->void:
 	var player = get_tree().get_nodes_in_group("player")[0]
 	player.curar_dano(100)
 	global.toggle_pause()
 	queue_free()
-	pass # Replace with function body.
+# NUEVA FUNCION: Comprobar si hay conexión a Internet
+func check_internet_connection():
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.connect("request_completed", self, "_on_request_completed")
+
+	# Realiza una solicitud a Google para comprobar la conexión
+	var url = "https://www.google.com"
+	http_request.request(url)
+
+func _on_request_completed(result, response_code, headers, body):
+	if response_code == 200:
+		$Label.text = "Internet is available"
+	else:
+		$Label.text = "No internet connection"

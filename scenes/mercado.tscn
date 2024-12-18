@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=106 format=2]
 
 [ext_resource path="res://assets/tilesets/decorative.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/shell_icon.png" type="Texture" id=2]
@@ -26,6 +26,9 @@
 [ext_resource path="res://assets/ui/up.png" type="Texture" id=24]
 [ext_resource path="res://assets/PirataOne-Regular.ttf" type="DynamicFontData" id=25]
 [ext_resource path="res://assets/FLORLRG_2.otf" type="DynamicFontData" id=26]
+[ext_resource path="res://assets/ui/icon_home.png" type="Texture" id=27]
+[ext_resource path="res://assets/ui/button2.png" type="Texture" id=28]
+[ext_resource path="res://assets/ui/icon_ad.png" type="Texture" id=29]
 
 [sub_resource type="TileSet" id=114]
 6/name = "mainlevbuild.png 6"
@@ -1075,6 +1078,23 @@ outline_size = 9
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 26 )
 
+[sub_resource type="StyleBoxTexture" id=214]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 30, 14 )
+
+[sub_resource type="StyleBoxTexture" id=215]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 30, 14 )
+modulate_color = Color( 0.988235, 1, 0.729412, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=216]
+
+[sub_resource type="StyleBoxEmpty" id=217]
+
+[sub_resource type="StyleBoxTexture" id=218]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 30, 14 )
+
 [sub_resource type="DynamicFont" id=160]
 size = 32
 outline_size = 2
@@ -1150,7 +1170,7 @@ modulate = Color( 0.882353, 0.882353, 0.882353, 1 )
 position = Vector2( 817.362, 812.222 )
 scale = Vector2( 1.07723, 1.06251 )
 frames = SubResource( 153 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="reputationshp" type="Button" parent="back"]
@@ -1212,13 +1232,13 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
+frame = 1
 playing = true
 
 [node name="Guard" type="AnimatedSprite" parent="back"]
 position = Vector2( 1024.01, 815.666 )
 scale = Vector2( 0.993032, 1.0243 )
 frames = SubResource( 169 )
-frame = 2
 playing = true
 
 [node name="talkguard" type="Button" parent="back/Guard"]
@@ -1236,7 +1256,7 @@ custom_styles/normal = SubResource( 192 )
 position = Vector2( 928.224, 814.221 )
 scale = Vector2( 1.0087, 0.991311 )
 frames = SubResource( 174 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="talkguard" type="Button" parent="back/Guard2"]
@@ -1256,12 +1276,14 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
+frame = 1
 playing = true
 
 [node name="shieldwarrior" type="AnimatedSprite" parent="back"]
 position = Vector2( 1093.34, 821.332 )
 scale = Vector2( 0.811806, 0.822569 )
 frames = SubResource( 184 )
+frame = 1
 playing = true
 
 [node name="talkshieldwarrior" type="Button" parent="back/shieldwarrior"]
@@ -1281,7 +1303,7 @@ position = Vector2( -0.00474548, -25.7565 )
 scale = Vector2( 1.09303, 1.16854 )
 frames = SubResource( 207 )
 animation = "1"
-frame = 2
+frame = 3
 playing = true
 
 [node name="tutorial" type="Node2D" parent="."]
@@ -1313,6 +1335,7 @@ position = Vector2( 340.556, 123.333 )
 rotation = -1.5708
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
+frame = 1
 playing = true
 
 [node name="state1" type="Node2D" parent="tutorial"]
@@ -1341,7 +1364,6 @@ position = Vector2( 168.889, 85 )
 rotation = 3.14159
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
-frame = 3
 playing = true
 
 [node name="state2" type="Node2D" parent="tutorial"]
@@ -1370,7 +1392,6 @@ position = Vector2( -167.917, 133.889 )
 rotation = 3.14159
 scale = Vector2( 3.75926, 3.54783 )
 frames = SubResource( 213 )
-frame = 3
 playing = true
 
 [node name="currentcamera" type="Camera2D" parent="."]
@@ -1379,7 +1400,7 @@ current = true
 script = ExtResource( 9 )
 
 [node name="shells" type="Node2D" parent="currentcamera"]
-position = Vector2( -253.333, -153.333 )
+position = Vector2( -253.333, -155 )
 
 [node name="Sprite-0001" type="Sprite" parent="currentcamera/shells"]
 position = Vector2( 32.2776, 15.4445 )
@@ -1399,6 +1420,36 @@ text = "000"
 position = Vector2( -6.05557, 15.5 )
 scale = Vector2( 1.03819, 1.03819 )
 texture = ExtResource( 2 )
+
+[node name="buttons" type="Node2D" parent="currentcamera"]
+
+[node name="backtomenu" type="Button" parent="currentcamera/buttons"]
+margin_left = 228.0
+margin_top = -156.0
+margin_right = 276.0
+margin_bottom = -114.0
+custom_styles/hover = SubResource( 214 )
+custom_styles/pressed = SubResource( 215 )
+custom_styles/focus = SubResource( 216 )
+custom_styles/disabled = SubResource( 217 )
+custom_styles/normal = SubResource( 218 )
+icon = ExtResource( 27 )
+icon_align = 1
+expand_icon = true
+
+[node name="showplusmenu" type="Button" parent="currentcamera/buttons"]
+margin_left = 174.667
+margin_top = -156.0
+margin_right = 222.667
+margin_bottom = -114.0
+custom_styles/hover = SubResource( 214 )
+custom_styles/pressed = SubResource( 215 )
+custom_styles/focus = SubResource( 216 )
+custom_styles/disabled = SubResource( 217 )
+custom_styles/normal = SubResource( 218 )
+icon = ExtResource( 29 )
+icon_align = 1
+expand_icon = true
 
 [node name="ambience" type="AudioStreamPlayer2D" parent="currentcamera"]
 pause_mode = 2
@@ -1461,5 +1512,7 @@ script = ExtResource( 21 )
 [connection signal="pressed" from="back/Guard/talkguard" to="." method="_on_talkguard_pressed"]
 [connection signal="pressed" from="back/Guard2/talkguard" to="." method="_on_talkguard_pressed"]
 [connection signal="pressed" from="back/shieldwarrior/talkshieldwarrior" to="." method="_on_talkshieldwarrior_pressed"]
+[connection signal="pressed" from="currentcamera/buttons/backtomenu" to="." method="_on_backtomenu_pressed"]
+[connection signal="pressed" from="currentcamera/buttons/showplusmenu" to="." method="_on_showplusmenu_pressed"]
 [connection signal="pressed" from="currentcamera/right_button" to="currentcamera" method="_on_right_button_pressed"]
 [connection signal="pressed" from="currentcamera/left_button" to="currentcamera" method="_on_left_button_pressed"]

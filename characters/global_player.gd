@@ -58,8 +58,6 @@ var save_file_path = "user://savegame.dat"
 
 func _ready():
 	load_game()
-	# Get the system locale language (e.g., "es", "en")
-	
 
 func toggle_pause():
 	is_paused = !is_paused
