@@ -115,7 +115,7 @@ config={
 "general": {
 "is_enabled": true,
 "is_for_child_directed_treatment": false,
-"max_ad_content_rating": "PG"
+"max_ad_content_rating": "G"
 },
 "interstitial": {
 "unit_ids": {
@@ -130,7 +130,7 @@ config={
 "rewarded": {
 "unit_ids": {
 "Android": {
-"standard": "ca-app-pub-8306120320708452/4773337229"
+"standard": "ca-app-pub-3940256099942544/5224354917"
 },
 "iOS": {
 "standard": "ca-app-pub-3940256099942544/1712485313"

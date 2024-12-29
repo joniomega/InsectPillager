@@ -1751,6 +1751,12 @@ scale = Vector2( 3.90625, 4.10547 )
 frames = SubResource( 66 )
 playing = true
 
+[node name="testing" type="Button" parent="Menu"]
+margin_left = -278.0
+margin_right = -63.0
+margin_bottom = 144.0
+text = "TESTING"
+
 [node name="Opciones" type="Control" parent="."]
 visible = false
 anchor_left = 1.0
@@ -1864,6 +1870,7 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 816, 539 )
 scale = Vector2( 6.0829, 5.70486 )
 frames = SubResource( 72 )
+frame = 4
 playing = true
 
 [node name="Puppetpriest" type="AnimatedSprite" parent="."]
@@ -1871,7 +1878,6 @@ modulate = Color( 1, 1, 1, 0.745098 )
 position = Vector2( 211.5, 541.88 )
 scale = Vector2( 5.64063, 5.09 )
 frames = SubResource( 180 )
-frame = 3
 playing = true
 
 [connection signal="pressed" from="Menu/play" to="." method="_on_play_pressed"]
@@ -1879,6 +1885,7 @@ playing = true
 [connection signal="pressed" from="Menu/en" to="." method="_on_en_pressed"]
 [connection signal="pressed" from="Menu/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu/testing" to="." method="_on_testing_pressed"]
 [connection signal="pressed" from="Opciones/Volver_al_menu" to="." method="_on_Volver_al_menu_pressed"]
 [connection signal="value_changed" from="Opciones/HBoxContainer/Slider/Master" to="." method="_on_Master_value_changed"]
 [connection signal="value_changed" from="Opciones/HBoxContainer/Slider/Music" to="." method="_on_Music_value_changed"]

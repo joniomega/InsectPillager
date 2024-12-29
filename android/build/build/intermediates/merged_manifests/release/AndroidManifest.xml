@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.godotengine.insectpillager"
     android:installLocation="auto"
-    android:versionCode="23"
+    android:versionCode="24"
     android:versionName="1" >
 
     <uses-sdk
@@ -19,9 +19,9 @@
         android:glEsVersion="0x00030000"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" /> <!-- Android package visibility setting -->
@@ -72,7 +72,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8306120320708452~5849781022" />
+            android:value="ca-app-pub-3940256099942544~3347511713" />
         <meta-data
             android:name="org.godotengine.plugin.v1.AdMob"
             android:value="com.poing.admob.AdMob" /> <!-- Records the version of the Godot library -->

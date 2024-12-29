@@ -83,7 +83,7 @@ __meta__ = {
 anchor_left = 0.145
 anchor_top = 0.546667
 anchor_right = 0.855
-anchor_bottom = 0.773333
+anchor_bottom = 0.858
 theme = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -97,14 +97,13 @@ margin_top = 24.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/TabContainer/AdFormats"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_scale = Vector2( 1, 1.3 )
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Banner" type="HBoxContainer" parent="Background/TabContainer/AdFormats/VBoxContainer"]
+margin_top = 23.0
 margin_right = 727.0
-margin_bottom = 20.0
+margin_bottom = 43.0
 size_flags_vertical = 0
 alignment = 1
 
@@ -127,9 +126,9 @@ disabled = true
 text = "DISABLE BANNER"
 
 [node name="Banner2" type="HBoxContainer" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 24.0
+margin_top = 47.0
 margin_right = 727.0
-margin_bottom = 44.0
+margin_bottom = 67.0
 size_flags_vertical = 0
 alignment = 1
 
@@ -152,23 +151,22 @@ disabled = true
 text = "HIDE BANNER"
 
 [node name="Interstitial" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 48.0
+margin_top = 71.0
 margin_right = 727.0
-margin_bottom = 68.0
+margin_bottom = 91.0
 disabled = true
 text = "INTERSTITIAL"
 
 [node name="Rewarded" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 72.0
+margin_top = 95.0
 margin_right = 727.0
-margin_bottom = 92.0
-disabled = true
+margin_bottom = 115.0
 text = "REWARDED"
 
 [node name="RewardedInterstitial" type="Button" parent="Background/TabContainer/AdFormats/VBoxContainer"]
-margin_top = 96.0
+margin_top = 119.0
 margin_right = 727.0
-margin_bottom = 116.0
+margin_bottom = 139.0
 disabled = true
 text = "REWARDED INTERSTITIAL"
 
@@ -242,14 +240,12 @@ __meta__ = {
 margin_top = 67.0
 margin_right = 355.0
 margin_bottom = 87.0
-disabled = true
 text = "REQUEST USER CONSENT"
 
 [node name="ResetConsentState" type="Button" parent="Background/TabContainer/UMP/VBoxContainer"]
 margin_top = 91.0
 margin_right = 355.0
 margin_bottom = 111.0
-disabled = true
 text = "RESET CONSENT STATE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -319,7 +315,6 @@ margin_bottom = -44.0
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/normal = SubResource( 5 )
-pressed = true
 text = "MUSIC"
 script = ExtResource( 5 )
 

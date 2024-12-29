@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://assets/ENDOR___.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PentaGrams Malefissent.ttf" type="DynamicFontData" id=2]
@@ -177,6 +177,34 @@
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
+5/name = "decorative.png 5"
+5/texture = ExtResource( 18 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 140, 165, 36, 28 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "decorative.png 6"
+6/texture = ExtResource( 18 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 208, 176, 20, 17 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
 
 [sub_resource type="DynamicFont" id=13]
 size = 35
@@ -385,6 +413,26 @@ animations = [ {
 "speed": 2.0
 } ]
 
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 15, 22 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 8 )
+region = Rect2( 15, 0, 15, 22 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 8 )
+region = Rect2( 30, 0, 15, 22 )
+
+[sub_resource type="SpriteFrames" id=214]
+animations = [ {
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="DynamicFont" id=19]
 size = 64
 outline_size = 4
@@ -452,7 +500,7 @@ scale = Vector2( 5, 5 )
 tile_set = SubResource( 56 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1, 1, 0, 2, 1, 0, 65540, 0, 0, 65541, 0, 0, 131076, 1, 0, 131077, 1, 0, 131078, 4, 0, 196611, 4, 0 )
+tile_data = PoolIntArray( 1, 1, 0, 2, 1, 0, 65540, 0, 0, 65541, 0, 0, 131072, 5, 0, 131076, 1, 0, 131077, 2, 0, 131078, 3, 0, 262143, 3, 0, 196611, 4, 0, 196614, 6, 0 )
 
 [node name="sword_button" type="Button" parent="."]
 margin_left = 581.0
@@ -479,7 +527,6 @@ position = Vector2( 352, 37 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
-frame = 1
 playing = true
 
 [node name="dagger_button" type="Button" parent="."]
@@ -507,7 +554,7 @@ position = Vector2( 362, 37 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="crossbow_button" type="Button" parent="."]
@@ -535,10 +582,12 @@ position = Vector2( 364, 40 )
 rotation = -1.5708
 scale = Vector2( 3.83333, 3.36364 )
 frames = SubResource( 43 )
+frame = 3
 playing = true
 
 [node name="levels" type="Node2D" parent="."]
-position = Vector2( 277, 161 )
+position = Vector2( 285, 125 )
+scale = Vector2( 1.1, 1.1 )
 
 [node name="levelicon" type="AnimatedSprite" parent="levels"]
 position = Vector2( 0.500015, 152.5 )
@@ -614,16 +663,27 @@ frame = 2
 playing = true
 flip_h = true
 
+[node name="arrowplay" type="AnimatedSprite" parent="levels"]
+visible = false
+position = Vector2( -172.11, 143.019 )
+rotation = -1.5708
+scale = Vector2( 5.93376, 6.40719 )
+frames = SubResource( 214 )
+frame = 2
+speed_scale = 0.5
+playing = true
+flip_v = true
+
 [node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 247, 147 )
 stream = ExtResource( 9 )
 bus = "Effects"
 
 [node name="continue" type="Button" parent="."]
-margin_left = 569.0
-margin_top = 466.0
-margin_right = 1012.0
-margin_bottom = 590.0
+margin_left = 563.0
+margin_top = 459.0
+margin_right = 964.0
+margin_bottom = 568.0
 custom_fonts/font = SubResource( 19 )
 custom_styles/hover = SubResource( 20 )
 custom_styles/pressed = SubResource( 21 )

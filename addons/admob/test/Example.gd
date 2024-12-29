@@ -22,8 +22,15 @@ func _add_text_Advice_Node(text_value : String) -> void:
 	Advice.bbcode_text += text_value + "\n"
 
 func _ready() -> void:
+	MobileAds.config.is_personalized_ads_enabled = false
+	MobileAds.initialize()
 	BannerPosition.pressed = MobileAds.AdMobSettings.config.banner.position
 	RespectSafeArea.pressed = MobileAds.AdMobSettings.config.banner.respect_safe_area
+	
+	MobileAds.config = {
+	"app_id": "ca-app-pub-3940256099942544~3347511713",
+	"rewarded_id": "ca-app-pub-3940256099942544/5224354917"
+	}
 
 	OS.center_window()
 	for banner_size in MobileAds.AdMobSettings.BANNER_SIZE:
@@ -99,6 +106,7 @@ func _ready() -> void:
 		MobileAds.connect("initialization_complete", self, "_on_MobileAds_initialization_complete")
 	else:
 		_add_text_Advice_Node("AdMob only works on Android or iOS devices!")
+
 
 func _on_MobileAds_rewarded_interstitial_ad_clicked():
 	_add_text_Advice_Node("Rewarded Interstitial clicked")
@@ -244,6 +252,15 @@ func _on_MobileAds_consent_info_update_success(status_message : String) -> void:
 
 func _on_MobileAds_consent_status_changed(status_message : String) -> void:
 	_add_text_Advice_Node("Consent status changed: " + status_message)
+	
+	if MobileAds.config.is_consent_given:
+		_add_text_Advice_Node("CONSENT GIVEN AND AD TRYING TO LOAD AGAIN: " + status_message)
+		MobileAds.load_rewarded()  # Solo cargar el anuncio si el consentimiento es positivo.
+	else:
+		_add_text_Advice_Node("Consent NOT GIVEN. Loading non-personalized ads.")
+		MobileAds.config.is_personalized_ads_enabled = false  # Disable personalized ads.
+		MobileAds.load_rewarded()  # Load non-personalized ads.
+
 
 func _on_BannerSizes_item_selected(index : int) -> void:
 	if MobileAds.get_is_initialized():

@@ -8,6 +8,8 @@
           android:installLocation="auto">
 
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
     <supports-screens
@@ -30,9 +32,9 @@
         android:icon="@mipmap/icon" >
 
         <meta-data
+            tools:replace="android:value"
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8306120320708452~5849781022" 
-            tools:replace="android:value" />
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
 
         <activity
             android:name=".GodotApp"

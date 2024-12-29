@@ -163,6 +163,34 @@
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
+4/name = "decorative.png 4"
+4/texture = ExtResource( 21 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 141, 120, 36, 26 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "decorative.png 5"
+5/texture = ExtResource( 21 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 96, 12, 16, 38 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
 
 [sub_resource type="AtlasTexture" id=353]
 atlas = ExtResource( 4 )
@@ -2472,7 +2500,7 @@ scale = Vector2( 1.6, 1.6 )
 tile_set = SubResource( 513 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( 131078, 536870915, 0, 393217, 536870913, 0, 393225, 536870914, 0, 524288, 2, 0, 589832, 1, 0 )
+tile_data = PoolIntArray( 1, 5, 0, 131078, 536870915, 0, 393217, 536870913, 0, 393225, 536870914, 0, 458771, 4, 0, 589821, 4, 0, 524288, 2, 0, 589824, 4, 0, 589832, 1, 0, 589842, 4, 0 )
 
 [node name="character" type="Node2D" parent="."]
 position = Vector2( 260, 280 )

@@ -95,3 +95,8 @@ func _on_en_pressed():
 	TranslationServer.set_locale("en")  # Use Spanish
 	
 	pass # Replace with function body.
+
+
+func _on_testing_pressed():
+	get_tree().change_scene("res://addons/admob/test/Example.tscn")
+	pass # Replace with function body.

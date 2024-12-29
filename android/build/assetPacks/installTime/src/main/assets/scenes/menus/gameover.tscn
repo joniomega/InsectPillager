@@ -31,6 +31,9 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 12 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 30
 outline_size = 3
@@ -55,9 +58,6 @@ modulate_color = Color( 0.741176, 1, 0.682353, 1 )
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 30, 14 )
 
-[sub_resource type="DynamicFont" id=12]
-font_data = ExtResource( 12 )
-
 [node name="gameover" type="CanvasLayer"]
 pause_mode = 2
 scale = Vector2( 1.5, 1.5 )
@@ -72,11 +72,18 @@ margin_bottom = 458.333
 rect_scale = Vector2( 1, 0.97974 )
 color = Color( 0.0745098, 0.0745098, 0.0745098, 0.631373 )
 
+[node name="output" type="RichTextLabel" parent="."]
+margin_left = -233.333
+margin_top = 74.6667
+margin_right = -86.333
+margin_bottom = 152.667
+text = "OUTPUT LABEL"
+
 [node name="Control" type="Control" parent="."]
-margin_left = 329.333
-margin_top = 174.833
-margin_right = 369.333
-margin_bottom = 214.833
+margin_left = 340.0
+margin_top = 176.0
+margin_right = 380.0
+margin_bottom = 216.0
 
 [node name="scoretitle2" type="Label" parent="Control"]
 margin_left = -36.0
@@ -143,11 +150,18 @@ position = Vector2( -11.5, 13.75 )
 scale = Vector2( 1.05, 1.125 )
 texture = ExtResource( 6 )
 
+[node name="Label" type="Label" parent="."]
+margin_left = -153.667
+margin_top = 438.0
+margin_right = -42.667
+margin_bottom = 452.0
+custom_fonts/font = SubResource( 12 )
+
 [node name="revive" type="Button" parent="."]
-margin_left = 251.0
-margin_top = 254.0
-margin_right = 510.0
-margin_bottom = 316.0
+margin_left = -178.0
+margin_top = 450.167
+margin_right = 80.9999
+margin_bottom = 512.167
 rect_scale = Vector2( 0.6, 0.759999 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.909804, 0.909804, 0.909804, 1 )
@@ -163,10 +177,10 @@ icon = ExtResource( 8 )
 expand_icon = true
 
 [node name="exit" type="Button" parent="."]
-margin_left = 253.0
-margin_top = 304.0
-margin_right = 509.0
-margin_bottom = 367.0
+margin_left = 261.333
+margin_top = 253.167
+margin_right = 517.333
+margin_bottom = 316.167
 rect_scale = Vector2( 0.6, 0.759999 )
 custom_colors/font_color = Color( 0.682353, 0.682353, 0.682353, 1 )
 custom_colors/font_color_hover = Color( 0.909804, 0.909804, 0.909804, 1 )
@@ -183,20 +197,13 @@ align = 0
 expand_icon = true
 
 [node name="buttonsound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 331.333, 196.833 )
+position = Vector2( 342, 198 )
 stream = ExtResource( 5 )
 bus = "Effects"
 
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 11 )
-rewarded_id = "ca-app-pub-8306120320708452/4773337229"
-
-[node name="Label" type="Label" parent="."]
-margin_left = 275.333
-margin_top = 241.833
-margin_right = 386.333
-margin_bottom = 255.833
-custom_fonts/font = SubResource( 12 )
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
 
 [connection signal="pressed" from="revive" to="." method="_on_revive_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

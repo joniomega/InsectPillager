@@ -2,9 +2,14 @@ extends CanvasLayer
 
 var global
 onready var admob = $AdMob
+onready var console_output = $output
+var max_lines = 50
 
 func _ready()->void:
-
+	# Redirige los mensajes de consola
+	print("Console output redirection started!")
+	MobileAds.initialize()
+	
 	global = get_node("/root/global")
 	#ADMOB CONNECTS
 	admob.connect("rewarded_video_loaded",self,"rewardedad_loaded")
@@ -87,3 +92,17 @@ func _on_request_completed(result, response_code, headers, body):
 		$Label.text = "Internet is available"
 	else:
 		$Label.text = "No internet connection"
+
+# Captura la salida de la consola y la muestra en pantalla
+func _capture_console(message: String) -> void:
+	# Añade el mensaje al RichTextLabel
+	console_output.add_text(message.strip_edges() + "\n")
+	# Elimina las líneas antiguas si exceden el máximo
+	var lines = console_output.get_text().split("\n")
+	if lines.size() > max_lines:
+		lines = lines[-max_lines]  # Mantén solo las últimas `max_lines` líneas
+	console_output.text = "\n".join(lines)  # Actualiza el texto en pantalla
+
+# Ejemplo para probar mensajes en consola
+func _on_test_button_pressed():
+	print("Button pressed at time: " + str(OS.get_ticks_msec()))
