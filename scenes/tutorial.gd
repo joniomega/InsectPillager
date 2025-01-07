@@ -23,6 +23,7 @@ func _ready():
 			$state2.visible = true
 			pass # Replace with function body.
 	if self.name == "tutoriallvl":
+		
 		tutoriallvl()
 
 

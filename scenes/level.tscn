@@ -2528,7 +2528,6 @@ position = Vector2( 49, 315 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 2
 playing = true
 
 [node name="tip2" type="Node2D" parent="player/tutoriallvl/ui"]
@@ -2588,7 +2587,6 @@ position = Vector2( 962, 337 )
 rotation = 3.14159
 scale = Vector2( 5.28013, 4.77005 )
 frames = SubResource( 214 )
-frame = 2
 playing = true
 
 [node name="tip4" type="Node2D" parent="player/tutoriallvl/ui"]
